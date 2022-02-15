@@ -15,7 +15,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 ## Bronnenlijst
   1. CSS Animations properties (w3schools) https://www.w3schools.com/css/css3_animations.asp
-  2. -bron 2-
+  2. Include TTF font file in CSS (StackOverflow) https://stackoverflow.com/questions/24990554/how-to-include-a-font-ttf-using-css
   3. -...-
 
 
