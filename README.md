@@ -14,7 +14,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
 ## Bronnenlijst
-  1. -bron 1-
+  1. CSS Animations properties (w3schools) https://www.w3schools.com/css/css3_animations.asp
   2. -bron 2-
   3. -...-
 
@@ -27,15 +27,16 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   ### Je storyboard:
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="storyboard voor opdracht 1">
+  <img src="readme-images/Storyboard-ffd.jpg" width="375px" alt="storyboard voor opdracht 1">
 
 
   ### Je ambitie: 
   Aan deze technieken/punten wil ik werken:
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - Skill in CSS animation verbeteren
+  - Met behulp van CSS animatie blokken 'realistische' zwaartekracht geven
+  - Vormen maken met alleen html/css
+  - CSS file duidelijker (mbv een volgorde binnen de properties) indelen
+  - Root gebruiken voor meer dan kleuren
  
 </details>
 
