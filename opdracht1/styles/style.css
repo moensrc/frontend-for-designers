@@ -1,18 +1,14 @@
 /* CSS Document */
 
-/*********/
-/* FONTS */
-/*********/
+/********/
+/* FONT */
+/********/
 @font-face {
-	font-family: 'eenfont';
-	src: url('../fonts/eenfont.woff2') format('woff2'),
-			 url('../fonts/eenfont.woff') format('woff');
+	font-family: "legothick";
+	src: url("../fonts/Legothick.ttf") format("truetype");
 	font-weight: normal;
 	font-style: normal;
-
 }
-
-
 
 
 
@@ -20,7 +16,7 @@
 /* CSS REMEDY */
 /**************/
 *, *::after, *::before {
-  box-sizing:border-box;  
+  	box-sizing:border-box;  
 }
 
 button, summary {
@@ -29,29 +25,100 @@ button, summary {
 
 
 
-
-
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************/
 :root {
-	/* startje */
-	--color-main:#111;
-	--color-background:#eee;
+	--color-text:#111; /* text color */
+	--color-background:#eee; /* background color */
+	/* set colors for individual blocks */
+	--color-l-block: #EF476F;
+	--color-e-block: #FFD166;
+	--color-g-block: #06D6A0;
+	--color-o-block: #229EC7;
 }
 
 
 
 
-
-/****************/
-/* JOUW STYLING */
-/****************/
+/********/
+/* BODY */
+/********/
 body {
-  font-family:eenfont, sans-serif;
-  color:var(--color-main);
-  background-color:var(--color-background);
+	height: 100vh;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	
+	background-color:var(--color-background);
+  	font-family: "legothick", sans-serif;
+  	text-transform: uppercase;
+  	color:var(--color-text);
 }
 
-/* jouw code */
+
+h1 span {
+	position: relative; /* relative to position nibs of legoblocks inside*/
+
+	padding: .5em;
+	background: var(--color-background);
+}
+
+h1 span::before {
+	content: ''; /* include for the shape to show up */
+
+	position: absolute; 
+	top: .25em;
+	right: -.25em;
+	width: .5em;
+	height: .5em;
+
+	background: var(--color-text);
+
+	border-radius: 10%;
+}
+
+h1 span::after {
+	content: ''; /* include for the shape to show up */
+
+	position: absolute;
+	bottom: .25em;
+	right: -.25em;
+	width: .5em;
+	height: .5em;
+	
+	background: var(--color-text);
+
+	border-radius: 10%;
+}
+
+h1 span:first-of-type {
+	position: relative;
+	z-index: 1;
+
+	background: var(--color-l-block);
+}
+
+h1 span:nth-of-type(2) {
+	position: relative;
+	z-index: 2;
+
+	background: var(--color-e-block);
+}
+
+h1 span:nth-of-type(3) {
+	position: relative;
+	z-index: 3;
+
+	background: var(--color-g-block);
+}
+
+h1 span:nth-of-type(4) {
+	position: relative;
+	z-index: 4;
+
+	background: var(--color-o-block);
+}
 
