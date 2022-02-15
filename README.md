@@ -17,6 +17,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   1. CSS Animations properties (w3schools) https://www.w3schools.com/css/css3_animations.asp
   2. Include TTF font file in CSS (StackOverflow) https://stackoverflow.com/questions/24990554/how-to-include-a-font-ttf-using-css
   3. CSS z-index positions & rules (w3schools) https://www.w3schools.com/cssref/pr_pos_z-index.asp
+  4. CSS ::before & ::after pseudoelements: how they work (YouTube: Kevin Powell) https://www.youtube.com/watch?v=zGiirUiWslI&ab_channel=KevinPowell
+  5. 
 
 
 
