@@ -25,6 +25,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   9. CSS animation keep final state, forwards (StackOverflow) https://stackoverflow.com/questions/12991164/maintaining-the-final-state-at-end-of-a-css3-animation
   10. CSS transform scale xy values (Mozilla) https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale()
   11. CSS jumping box animation (Prototypr) https://blog.prototypr.io/making-a-jumping-box-animation-using-only-css-9b6f1635b886
+  12. CSS animation timing functions: cubic bezier (Cubic Bezier) https://cubic-bezier.com/#
 
 
 
