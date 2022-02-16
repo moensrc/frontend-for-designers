@@ -18,7 +18,13 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   2. Include TTF font file in CSS (StackOverflow) https://stackoverflow.com/questions/24990554/how-to-include-a-font-ttf-using-css
   3. CSS z-index positions & rules (w3schools) https://www.w3schools.com/cssref/pr_pos_z-index.asp
   4. CSS ::before & ::after pseudoelements: how they work (YouTube: Kevin Powell) https://www.youtube.com/watch?v=zGiirUiWslI&ab_channel=KevinPowell
-  5. 
+  5. CSS default styling of html elements (w3schools) https://www.w3schools.com/cssref/css_default_values.asp
+  6. CSS transform property on span (StackOverflow) https://stackoverflow.com/questions/24961795/how-can-i-use-css3-transform-on-a-span
+  7. Consecutive CSS animations (StackOverflow) https://stackoverflow.com/questions/48119227/chain-sequence-animation-in-css
+  8. Consecutive CSS animations (CSS tricks) https://css-tricks.com/using-multi-step-animations-transitions/
+  9. CSS animation keep final state, forwards (StackOverflow) https://stackoverflow.com/questions/12991164/maintaining-the-final-state-at-end-of-a-css3-animation
+  10. CSS transform scale xy values (Mozilla) https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale()
+  11. CSS jumping box animation (Prototypr) https://blog.prototypr.io/making-a-jumping-box-animation-using-only-css-9b6f1635b886
 
 
 
