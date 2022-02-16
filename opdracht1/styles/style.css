@@ -12,6 +12,8 @@
 
 
 
+
+
 /**************/
 /* CSS REMEDY */
 /**************/
@@ -22,6 +24,8 @@
 button, summary {
 	cursor: pointer;
 }
+
+
 
 
 
@@ -41,16 +45,19 @@ button, summary {
 
 
 
+
 /********/
 /* BODY */
 /********/
 body {
-	height: 100vh;
+	height: 90vh; /* idk how this works, if height is 100 h1 is not centered properly */
 
 	display: flex;
-	flex-direction: row;
 	justify-content: center;
 	align-items: center;
+	
+
+	margin: 0;
 	
 	background-color:var(--color-background);
   	font-family: "legothick", sans-serif;
@@ -58,11 +65,19 @@ body {
   	color:var(--color-text);
 }
 
+h1 {	
+	position: relative;
+
+	margin: 0;
+
+	letter-spacing: -.1em;
+}
+
 
 h1 span {
-	position: relative; /* relative to position nibs of legoblocks inside*/
+	position: absolute; 
 
-	padding: .5em;
+	padding: .5em .6em .5em .5em;
 	background: var(--color-background);
 }
 
@@ -95,30 +110,160 @@ h1 span::after {
 }
 
 h1 span:first-of-type {
-	position: relative;
-	z-index: 1;
+	z-index: 1; /* positions l block as first layer (1) */
+	right: 1.4em;
+
+	transform: rotate(-90deg);
 
 	background: var(--color-l-block);
 }
 
+h1 span:first-of-type::before, 
+h1 span:first-of-type::after {
+	background: var(--color-l-block);
+}
+
 h1 span:nth-of-type(2) {
-	position: relative;
-	z-index: 2;
+	z-index: 2; /* positions e block as second layer (2) */
+	right: 1.4em;
+	bottom: -0.5em;
+
+	transform: rotate(-90deg);
 
 	background: var(--color-e-block);
 }
 
+h1 span:nth-of-type(2)::before, 
+h1 span:nth-of-type(2)::after {
+	background: var(--color-e-block);
+}
+
 h1 span:nth-of-type(3) {
-	position: relative;
-	z-index: 3;
+	z-index: 3; /* positions g block as third layer (3) */
+
+	transform: rotate(-150deg);
+	right: -1em;
+	bottom: -1.5em;
 
 	background: var(--color-g-block);
 }
 
+h1 span:nth-of-type(3)::before, 
+h1 span:nth-of-type(3)::after {
+	background: var(--color-g-block);
+}
+
 h1 span:nth-of-type(4) {
-	position: relative;
-	z-index: 4;
+	z-index: 4; /* positions o block as fourth layer (4) */
+	right: -3.05em;
+
+	transform: rotate(-90deg);
 
 	background: var(--color-o-block);
 }
 
+h1 span:nth-of-type(4)::before, 
+h1 span:nth-of-type(4)::after {
+	background: var(--color-o-block);
+}
+
+
+
+
+
+/**************/
+/* ANIMATIONS */
+/**************/
+
+h1:hover span:nth-of-type(4) {
+	animation: move-o-block-right .5s 1 .5s ease-out forwards,
+	stack-o-block .8s 1 1.5s ease-in forwards,
+	move-o-block-left .5s 1 3s ease-in forwards;
+}
+
+h1:hover span:nth-of-type(3) {
+	animation: fall-g-block .3s 1 .6s ease-in-out forwards,
+	move-g-block-left .5s 1 3s ease-in forwards;
+}
+
+/* step 1: moves o block right */
+@keyframes move-o-block-right {
+	0% {
+		transform: rotate(-90deg) translateY(0);
+	}
+	80% {
+		transform: rotate(-90deg) translateY(1em); /* use translateY to position on horizontal axis, because element is rotated sideways */
+	}
+	100% {
+		transform: rotate(-90deg) translateY(.8em);
+	}
+}
+
+/* step 2: g block falls on floor */
+@keyframes fall-g-block {
+	0% {
+		transform: rotate(-140deg) translate(0);
+	}
+	100% {
+		transform: rotate(-90deg) translate(-.4em, .4em);
+	}
+}
+
+/* step 3: o block jumps on g block to stack */
+@keyframes stack-o-block {
+	0% {
+		transform: rotate(-90deg) translate(0, .8em) scale(1,1);
+	}
+	10% {
+		transform: rotate(-90deg) translate(0, .8em) scale(0.75, 1.25);
+	}
+	50% {
+		transform: rotate(-90deg) translate(2em, .8em) scale(1, 1);
+	}
+	70% {
+		transform: rotate(-90deg) translate(2em, -1.65em);
+	}
+	100% {
+		transform: rotate(-90deg) translate(1.45em, -1.65em);
+	}
+}
+
+/* step 4: o block moves left with g block until it collides with le-stack */
+@keyframes move-o-block-left {
+	0% {
+		transform: rotate(-90deg) translate(1.45em, -1.65em);
+	}
+	100% {
+		transform: rotate(-90deg) translate(1.45em, -2.5em);
+	}
+}
+
+/* step 4: g block moves left with o block until it collides with le-stack */
+@keyframes move-g-block-left {
+	0% {
+		transform: rotate(-90deg) translate(-.4em, .4em);
+	}
+	100% {
+		transform: rotate(-90deg) translate(-.4em, -0.45em);
+	}
+}
+
+/* step 5: go-stack jumps onto le-stack to stack all of them on top */
+@keyframes stack-lego-blocks {
+	/* move g & o blocks up together */
+}
+
+@keyframes fall-lego-stack {
+	/* lego stack falls */
+}
+
+@keyframes shake-lego-stack {
+	/* shake stack */
+}
+
+/* jumps apart */
+
+
+
+
+/* media query for prefers reduced motion */
