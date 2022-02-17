@@ -26,6 +26,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   10. CSS transform scale xy values (Mozilla) https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale()
   11. CSS jumping box animation (Prototypr) https://blog.prototypr.io/making-a-jumping-box-animation-using-only-css-9b6f1635b886
   12. CSS animation timing functions: cubic bezier (Cubic Bezier) https://cubic-bezier.com/#
+  13. CSS transform-origin property (Mozilla) https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin
 
 
 
