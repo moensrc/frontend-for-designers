@@ -69,7 +69,6 @@ h1 {
 	position: relative;
 
 	margin: 0;
-
 	letter-spacing: -.1em;
 }
 
@@ -174,16 +173,32 @@ h1 span:nth-of-type(4)::after {
 /**************/
 /* ANIMATIONS */
 /**************/
-
-h1:hover span:nth-of-type(4) {
-	animation: move-o-block-right .5s 1 .5s ease-out forwards,
-	stack-o-block .8s 1 1.5s ease-in forwards,
-	move-o-block-left .5s 1 3s ease-in forwards;
+/* h1:hover span:first-of-type {
+	animation: fall-lego-stack-l .6s 1 5s normal forwards;
 }
 
-h1:hover span:nth-of-type(3) {
-	animation: fall-g-block .3s 1 .6s ease-in-out forwards,
-	move-g-block-left .5s 1 3s ease-in forwards;
+h1:hover span:nth-of-type(2) {
+	animation: fall-lego-stack-e .6s 1 5s ease-out forwards;
+} */
+
+body:hover h1 {
+	animation: fall-lego-stack .8s 1 5s ease-in forwards;
+}
+
+body:hover span:nth-of-type(3) {
+	animation: fall-g-block .3s 1 .5s ease-in-out forwards,
+	move-g-block-left .5s 1 3s ease-in-out forwards,
+	stack-lego-blocks-g .8s 1 4s ease-in forwards;
+	/* fall-lego-stack-g .6s 1 5s ease-out forwards; */
+}
+
+
+body:hover span:nth-of-type(4) {
+	animation: move-o-block-right .5s 1 .5s ease-out forwards,
+	stack-o-block .8s 1 1.5s cubic-bezier(.87,.38,1,.99) forwards,
+	move-o-block-left .5s 1 3s ease-in-out forwards,
+	stack-lego-blocks-o .8s 1 4s ease-in forwards;
+	/* fall-lego-stack-o .6s 1 5s ease-out forwards; */
 }
 
 /* step 1: moves o block right */
@@ -209,22 +224,34 @@ h1:hover span:nth-of-type(3) {
 	}
 }
 
+
 /* step 3: o block jumps on g block to stack */
 @keyframes stack-o-block {
 	0% {
-		transform: rotate(-90deg) translate(0, .8em) scale(1,1);
+		transform: rotate(-90deg) translate(0, .8em) scale(1, 1);
 	}
 	10% {
-		transform: rotate(-90deg) translate(0, .8em) scale(0.75, 1.25);
+		transform: rotate(-90deg) translate(0, .8em) scale(0.8, 1.2);
 	}
 	50% {
-		transform: rotate(-90deg) translate(2em, .8em) scale(1, 1);
+		transform: rotate(-90deg) translate(3em, .1em) scale(1, 1);
 	}
 	70% {
-		transform: rotate(-90deg) translate(2em, -1.65em);
+		transform: rotate(-90deg) translate(3em, -1.65em) scale(1, 1);
 	}
 	100% {
-		transform: rotate(-90deg) translate(1.45em, -1.65em);
+		transform: rotate(-90deg) translate(1.45em, -1.65em) scale(1, 1);
+	}
+}
+
+
+/* step 4: g block moves left with o block until it collides with le-stack */
+@keyframes move-g-block-left {
+	0% {
+		transform: rotate(-90deg) translate(-.4em, .4em);
+	}
+	100% {
+		transform: rotate(-90deg) translate(-.4em, -0.45em);
 	}
 }
 
@@ -238,24 +265,61 @@ h1:hover span:nth-of-type(3) {
 	}
 }
 
-/* step 4: g block moves left with o block until it collides with le-stack */
-@keyframes move-g-block-left {
+/* step 5: go-stack jumps onto le-stack to stack all of them on top (g block) */
+@keyframes stack-lego-blocks-g {
+	/* move o block up together with g block */
 	0% {
-		transform: rotate(-90deg) translate(-.4em, .4em);
+		transform: rotate(-90deg) translate(-.4em, -0.45em) scale(1, 1);
+	}
+	10% {
+		transform: rotate(-90deg) translate(-.1em, -0.45em) scale(0.8, 1.2);
+	}
+	50% {
+		transform: rotate(-90deg) translate(2.8em, -1.85em) scale(1, 1);
+	}
+	70% {
+		transform: rotate(-90deg) translate(2.5em, -2.37em) scale(1, 1);
 	}
 	100% {
-		transform: rotate(-90deg) translate(-.4em, -0.45em);
+		transform: rotate(-90deg) translate(2.5em, -2.37em) scale(1, 1);
 	}
 }
 
-/* step 5: go-stack jumps onto le-stack to stack all of them on top */
-@keyframes stack-lego-blocks {
-	/* move g & o blocks up together */
+/* step 5: go-stack jumps onto le-stack to stack all of them on top (o block) */
+@keyframes stack-lego-blocks-o {
+	/* move o block up together with g block */
+	0% {
+		transform: rotate(-90deg) translate(1.45em, -2.5em) scale(1, 1);
+	}
+	10% {
+		transform: rotate(-90deg) translate(1.45em, -2.5em) scale(0.8, 1.2);
+	}
+	50% {
+		transform: rotate(-90deg) translate(4.75em, -3.85em) scale(1, 1);
+	}
+	70% {
+		transform: rotate(-90deg) translate(4.45em, -4.4em) scale(1, 1);
+	}
+	100% {
+		transform: rotate(-90deg) translate(4.45em, -4.4em) scale(1, 1);
+	}
 }
 
+
+/* step 6: lego stack falls over to the right side */
 @keyframes fall-lego-stack {
 	/* lego stack falls */
+	0% {
+		transform: rotate(0) translate(0, 0);
+	}
+
+	100% {
+		bottom: 0;
+		transform-origin: bottom left; /* stack circles around origin? */
+		transform: rotate(90deg) translate(2.9em, -.6em);
+	}
 }
+
 
 @keyframes shake-lego-stack {
 	/* shake stack */
