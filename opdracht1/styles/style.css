@@ -184,13 +184,13 @@ body:hover h1 {
 
 /* Letter L */
 body:hover span:first-of-type {
-	animation: break-lego-stack-l 1.2s 1 5.4s ease-out forwards;
+	animation: break-lego-stack-l 1.2s 1 5.5s ease-out forwards;
 }
 
 
 /* Letter E */
 body:hover span:nth-of-type(2) {
-	animation: break-lego-stack-e 1.3s 1 5.6s ease-out forwards;
+	animation: break-lego-stack-e 1.3s 1 5.5s ease-out forwards;
 }
 
 /* Letter G */
@@ -198,7 +198,7 @@ body:hover span:nth-of-type(3) {
 	animation: fall-g-block .3s 1 .5s ease-in-out forwards,
 	move-g-block-left .5s 1 2.2s ease-in-out forwards,
 	stack-lego-blocks-g .8s 1 3s ease-in forwards,
-	break-lego-stack-g 1.3s 1 5.6s ease-in-out forwards;
+	break-lego-stack-g 1.3s 1 5.5s ease-out forwards;
 	
 }
 
@@ -208,7 +208,7 @@ body:hover span:nth-of-type(4) {
 	stack-o-block .8s 1 1.2s cubic-bezier(.87,.38,1,.99) forwards,
 	move-o-block-left .5s 1 2.2s ease-in-out forwards,
 	stack-lego-blocks-o .8s 1 3s ease-in forwards,
-	break-lego-stack-o 1.2s 1 5.4s normal forwards;
+	break-lego-stack-o 1.2s 1 5.5s ease-out forwards;
 
 }
 
@@ -387,7 +387,7 @@ body:hover span:nth-of-type(4) {
 		transform: translate(0) rotate(90deg) scale(1);
 	}
 	25% {
-		transform: translate(-4em, -1em) rotate(90deg) scale(1.1);
+		transform: translate(-7em, -1em) rotate(90deg) scale(1.05);
 	}
 	60% {
 		transform: translate(.1em, -1em) rotate(200deg) scale(1);
@@ -403,15 +403,15 @@ body:hover span:nth-of-type(4) {
 /* step 8: lego stack breaks apart (G) and falls in place */
 @keyframes break-lego-stack-g {
 	0% {
-		transform: translate(-2em, -2em) rotate(90deg) scale(1);
+		transform: translate(-2em, -2em) rotate(0deg) scale(1);
 	}
 	40% {
-		transform: translate(-9em, -4em) rotate(90deg) scale(0.95);
+		transform: translate(-7em, -4em) rotate(0deg) scale(0.95);
 	}
 	60% {
 		transform: translate(-2.6em, -2.4em) rotate(90deg) scale(1);
 	}
-	90% {
+	85% {
 		transform: translate(-4em, -1.8em) rotate(90deg) scale(1);
 	}
 	100% {
@@ -425,7 +425,7 @@ body:hover span:nth-of-type(4) {
 		transform: translate(-4em, -4em) rotate(90deg) scale(1);
 	}
 	40% {
-		transform: translate(-8em, -5em) rotate(90deg) scale(1.05);
+		transform: translate(-7em, -5em) rotate(90deg) scale(1.05);
 	}
 	60% {
 		transform: translate(-4.25em, -3em) rotate(-90deg) scale(1);
