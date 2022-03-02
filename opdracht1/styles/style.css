@@ -32,8 +32,8 @@ button, summary {
 /*********************/
 :root {
 	--color-text:#111; /* text color */
-	--color-background:#eee; /* background color */
-	--color-text-border: white; /* text border (text-shadow) */
+	--color-background:rgb(253, 224, 224); /* background color */
+	--color-text-border: #fff; /* text border (text-shadow) */
 
 	/* set colors for individual blocks */
 	--color-l-block: #EF476F;
@@ -42,6 +42,21 @@ button, summary {
 	--color-o-block: #229EC7;
 }
 
+
+/* custom color palette for users who prefer dark theme */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-background: rgb(0, 2, 35);
+		--color-text-border: #eee;
+
+		/* set colors for individual blocks */
+		--color-l-block: #FA3664;
+		--color-e-block: #F8C755;
+		--color-g-block: #00B182;
+		--color-o-block: #157FA2;
+		
+	}
+}
 
 
 
@@ -68,17 +83,19 @@ h1 {
 	position: relative;
 
 	margin: 0;
+
+	font-size: clamp(2em, 6vmin, 2.5em);
 	letter-spacing: -.1em;
 
 	/* white outline for the text using a stacked textshadow */
 	text-shadow: .05em .05em var(--color-text-border), -.05em -.05em var(--color-text-border), .05em -.05em var(--color-text-border), -.05em .05em var(--color-text-border);
 }
 
-
 h1 span {
 	position: absolute; 
 
 	padding: .5em .6em .5em .5em;
+
 	background: var(--color-background);
 }
 
@@ -94,7 +111,7 @@ h1 span::before {
 
 	background: var(--color-text);
 
-	border-radius: 10%;
+	border-radius: 10%; /* round off corners */
 }
 
 h1 span::after {
@@ -187,7 +204,6 @@ body:hover span:first-of-type {
 	animation: break-lego-stack-l 1.2s 1 5.5s ease-out forwards;
 }
 
-
 /* Letter E */
 body:hover span:nth-of-type(2) {
 	animation: break-lego-stack-e 1.3s 1 5.5s ease-out forwards;
@@ -198,8 +214,7 @@ body:hover span:nth-of-type(3) {
 	animation: fall-g-block .3s 1 .5s ease-in-out forwards,
 	move-g-block-left .5s 1 2.2s ease-in-out forwards,
 	stack-lego-blocks-g .8s 1 3s ease-in forwards,
-	break-lego-stack-g 1.3s 1 5.5s ease-out forwards;
-	
+	break-lego-stack-g 1.3s 1 5.5s ease-out forwards;	
 }
 
 /* Letter O */
@@ -209,7 +224,6 @@ body:hover span:nth-of-type(4) {
 	move-o-block-left .5s 1 2.2s ease-in-out forwards,
 	stack-lego-blocks-o .8s 1 3s ease-in forwards,
 	break-lego-stack-o 1.2s 1 5.5s ease-out forwards;
-
 }
 
 /* KEYFRAMES LEGO ANIMATION (step by step) */
@@ -226,6 +240,7 @@ body:hover span:nth-of-type(4) {
 		transform: rotate(-90deg) translateY(.8em);
 	}
 }
+
 
 /* step 2: g block falls on floor */
 @keyframes fall-g-block {
@@ -327,7 +342,7 @@ body:hover span:nth-of-type(4) {
 	}
 	100% {
 		bottom: 0;
-		transform-origin: bottom left; /* stack circles around origin? */
+		transform-origin: bottom left; /* stack circles around origin */
 		transform: rotate(90deg) translate(2.9em, -.6em);
 	}
 }
@@ -386,8 +401,8 @@ body:hover span:nth-of-type(4) {
 	0% {
 		transform: translate(0) rotate(90deg) scale(1);
 	}
-	25% {
-		transform: translate(-7em, -1em) rotate(90deg) scale(1.05);
+	35% {
+		transform: translate(-5em, -1em) rotate(90deg) scale(1.05);
 	}
 	60% {
 		transform: translate(.1em, -1em) rotate(200deg) scale(1);
@@ -396,7 +411,7 @@ body:hover span:nth-of-type(4) {
 		transform: translate(-4em, .8em) rotate(180deg) scale(1);
 	}
 	100% {
-		transform: translate(-1.25em, 1.6em) rotate(180deg) scale(1);
+		transform: translate(-1.25em, 1.55em) rotate(180deg) scale(1);
 	}
 }
 
@@ -442,11 +457,18 @@ body:hover span:nth-of-type(4) {
 
 
 
-/*****************/
+/* ****************/
 /* MEDIA QUERIES */
 /*****************/
 
-@media (prefers-reduced-motion) {
-/* media query for prefers reduced motion */
-
+/* user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	body:hover h1,
+	body:hover span:first-of-type,
+	body:hover span:nth-of-type(2),
+	body:hover span:nth-of-type(3),
+	body:hover span:nth-of-type(4) {
+		animation-play-state: paused;
+	}
 }
+
