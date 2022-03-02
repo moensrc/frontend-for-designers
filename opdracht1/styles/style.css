@@ -61,6 +61,7 @@ button, summary {
 
 
 
+
 /********/
 /* BODY */
 /********/
@@ -194,9 +195,10 @@ h1 span:nth-of-type(4)::after {
 /* ANIMATIONS */
 /**************/
 
+/* specify animations for every letter and combination */
 body:hover h1 {
 	animation: fall-lego-stack .8s 1 4s ease-in forwards,
-	shake-lego-stack .6s 1 5s normal forwards;
+	shake-lego-stack .5s 1 5s normal forwards;
 }
 
 /* Letter L */
@@ -213,18 +215,19 @@ body:hover span:nth-of-type(2) {
 body:hover span:nth-of-type(3) {
 	animation: fall-g-block .3s 1 .5s ease-in-out forwards,
 	move-g-block-left .5s 1 2.2s ease-in-out forwards,
-	stack-lego-blocks-g .8s 1 3s ease-in forwards,
+	stack-lego-blocks-g .8s 1 3s cubic-bezier(.87,.38,1,.99) forwards,
 	break-lego-stack-g 1.3s 1 5.5s ease-out forwards;	
 }
 
 /* Letter O */
 body:hover span:nth-of-type(4) {
-	animation: move-o-block-right .5s 1 .5s ease-out forwards,
+	animation: move-o-block-right .5s 1 .5s ease-out forwards, 
 	stack-o-block .8s 1 1.2s cubic-bezier(.87,.38,1,.99) forwards,
 	move-o-block-left .5s 1 2.2s ease-in-out forwards,
-	stack-lego-blocks-o .8s 1 3s ease-in forwards,
+	stack-lego-blocks-o .8s 1 3s cubic-bezier(.87,.38,1,.99) forwards,
 	break-lego-stack-o 1.2s 1 5.5s ease-out forwards;
 }
+
 
 /* KEYFRAMES LEGO ANIMATION (step by step) */
 
@@ -420,7 +423,7 @@ body:hover span:nth-of-type(4) {
 	0% {
 		transform: translate(-2em, -2em) rotate(0deg) scale(1);
 	}
-	40% {
+	50% {
 		transform: translate(-7em, -4em) rotate(0deg) scale(0.95);
 	}
 	60% {
