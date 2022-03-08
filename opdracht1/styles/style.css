@@ -2,15 +2,15 @@
 /* FONTS */
 /*********/
 
-/* lego font */
-@font-face {
+/* lego font https://www.urbanfonts.com/fonts/Legothick.font */
+@font-face { 
 	font-family: "legothick";
 	src: url("../fonts/Legothick.ttf") format("truetype");
 	font-weight: normal;
 	font-style: normal;
 }
 
-/* google font */
+/* google font https://www.dafontfree.io/product-sans-font-family/ */
 @font-face {
 	font-family: "Product Sans";
 	src: url("../fonts/Product\ Sans\ Regular.ttf") format("truetype");
@@ -92,15 +92,14 @@ button, summary {
 /* BODY */
 /********/
 body {
+	height: 100vh;
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-
-	height: 100vh;
 	
 	margin: 0;
-
 }
 
 section {
@@ -181,7 +180,6 @@ section:first-of-type h1 span::before {
 	height: .5em;
 
 	background: var(--color-text);
-
 	border-radius: 10%; /* round off corners */
 }
 
@@ -195,7 +193,6 @@ section:first-of-type h1 span::after {
 	height: .5em;
 	
 	background: var(--color-text);
-
 	border-radius: 10%;
 }
 
@@ -210,7 +207,7 @@ section:first-of-type h1 span:first-of-type {
 
 section:first-of-type h1 span:first-of-type::before, 
 section:first-of-type h1 span:first-of-type::after {
-	background: var(--color-l-block);
+	background: var(--color-l-block); /* color nibs as block color */
 }
 
 section:first-of-type h1 span:nth-of-type(2) {
@@ -225,22 +222,22 @@ section:first-of-type h1 span:nth-of-type(2) {
 
 section:first-of-type h1 span:nth-of-type(2)::before, 
 section:first-of-type h1 span:nth-of-type(2)::after {
-	background: var(--color-e-block);
+	background: var(--color-e-block); /* color nibs as block color */
 }
 
 section:first-of-type h1 span:nth-of-type(3) {
 	z-index: 3; /* positions g block as third layer (3) */
-
-	transform: rotate(-150deg);
 	right: -1em;
 	bottom: -1.5em;
+
+	transform: rotate(-150deg);
 
 	background: var(--color-g-block);
 }
 
 section:first-of-type h1 span:nth-of-type(3)::before, 
 section:first-of-type h1 span:nth-of-type(3)::after {
-	background: var(--color-g-block);
+	background: var(--color-g-block); /* color nibs as block color */
 }
 
 section:first-of-type h1 span:nth-of-type(4) {
@@ -254,7 +251,7 @@ section:first-of-type h1 span:nth-of-type(4) {
 
 section:first-of-type h1 span:nth-of-type(4)::before, 
 section:first-of-type h1 span:nth-of-type(4)::after {
-	background: var(--color-o-block);
+	background: var(--color-o-block); /* color nibs as block color */
 }
 
 
@@ -262,6 +259,7 @@ section:first-of-type h1 span:nth-of-type(4)::after {
 /** STYLES **/
 section:nth-of-type(2) {
 	font-family: "Product Sans", sans-serif;
+
 	background-color: var(--color-google-background);
 }
 
@@ -276,7 +274,6 @@ section:nth-of-type(2) h1 {
 
 section:nth-of-type(2) h1 span {
 	position: relative;
-
 	display: inline-block; /* makes me able to transform the span*/
 }
 
@@ -313,6 +310,7 @@ section:nth-of-type(2) h1 span:nth-of-type(2)::after {
 
 	width: .125em;
 	height: .3em;
+
 	background: var(--color-letter-o1-e);
 
 	/* opacity: 0; /* make invisible so it can appear in animation */
@@ -610,6 +608,9 @@ section:nth-of-type(2):hover span:nth-of-type(2) {
 	}
 } */
 
+/* KEYFRAMES GOOGLE ANIMATION (step by step) */
+
+/* step 1: magnifying glass letter o scales up and rotates */
 @keyframes scale-magnifier {
 	0% {
 		transform: scale(1) rotate(0deg);
@@ -619,6 +620,8 @@ section:nth-of-type(2):hover span:nth-of-type(2) {
 	}
 }
 
+
+/* step 2: magnifying glass moves left, then right. zooms on letter o */
 @keyframes move-magnifier-right {
 	0% {
 		transform: scale(2) rotate(20deg) translate(0);
@@ -640,6 +643,7 @@ section:nth-of-type(2):hover span:nth-of-type(2) {
 	}
 }
 
+/* step 3: magnifying glass moves pack to original position */
 @keyframes move-magnifier-back {
 	0% {
 		transform: scale(2) rotate(-20deg) translate(1.1em, .35em);
@@ -651,6 +655,8 @@ section:nth-of-type(2):hover span:nth-of-type(2) {
 		transform: scale(1) rotate(0deg) translate(0);
 	}
 }
+
+
 
 
 
@@ -671,13 +677,14 @@ section:nth-of-type(2):hover span:nth-of-type(2) {
 	}
 }
 
+/* media query for screen min width 600px for responsiveness */
 @media only screen and (min-width: 600px) {
 	body {
-		flex-direction: row;
+		flex-direction: row; /* flex in row instead of column on bigger screen */
 		justify-content: space-evenly;
 	}
 
-	section {
+	section { /* reverse sizing */
 		width: 50vw;
 		height: 100vh;
 	}
