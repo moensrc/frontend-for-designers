@@ -28,7 +28,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   12. CSS animation timing functions: cubic bezier (Cubic Bezier) https://cubic-bezier.com/#
   13. CSS transform-origin property (Mozilla) https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin
   14. CSS text-shadow and text-stroke for font borders (DelftStack) https://www.delftstack.com/howto/css/css-font-border/#use-the-text-shadow-property-to-apply-borders-to-font-in-css
-  15. 
+  15. CSS span transform (StackOverflow) https://stackoverflow.com/questions/24961795/how-can-i-use-css3-transform-on-a-span
 
 
 
@@ -62,7 +62,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   ### Je uitkomst - karakteristiek screenshot(s):
   <img src="readme-images/dummy-plaatje.svg" width="375px" alt="uitomst opdracht 1">
-
+  
 
   ### Dit ging goed/Heb ik geleerd: 
   Korte omschrijving met plaatje(s)
