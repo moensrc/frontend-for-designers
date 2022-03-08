@@ -39,7 +39,11 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   ### Je storyboard:
-  <img src="readme-images/Storyboard-ffd.jpg" width="600px" alt="storyboard voor opdracht 1">
+    #### Lego
+      <img src="readme-images/Storyboard-ffd.jpg" width="600px" alt="storyboard voor opdracht 1">
+    #### Google
+      <img src="readme-images/Storyboard-ffd-2.jpg" width="600px" alt="storyboard 2 voor opdracht 1">
+
 
 
   ### Je ambitie: 
