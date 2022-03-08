@@ -1,9 +1,19 @@
-/********/
-/* FONT */
-/********/
+/*********/
+/* FONTS */
+/*********/
+
+/* lego font */
 @font-face {
 	font-family: "legothick";
 	src: url("../fonts/Legothick.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* google font */
+@font-face {
+	font-family: "Product Sans";
+	src: url("../fonts/Product\ Sans\ Regular.ttf") format("truetype");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -31,41 +41,46 @@ button, summary {
 /* CUSTOM PROPERTIES */
 /*********************/
 :root {
-	--color-text:#111; /* text color */
-	--color-background:rgb(253, 224, 224); /* background color */
-	--color-text-border: #fff; /* text border (text-shadow) */
-
-	/* set colors for individual blocks */
+	/* lego: set colors for individual blocks */
+	--color-lego-text:#111; /* text color */
+	--color-lego-background:rgb(253, 224, 224); /* background color */
+	--color-lego-text-border: #FFF; /* text border (text-shadow) */
+	
 	--color-l-block: #EF476F;
 	--color-e-block: #FFD166;
 	--color-g-block: #06D6A0;
 	--color-o-block: #229EC7;
 
-	--color-button: #EF476F;
-	--color-button-shadow: rgb(239 71 111 / 0.5); 
+	/* google: set colors for letters */
+	--color-google-background: #FFF;
 
-	--color-button-hover: #FFD166;
-	--color-button-shadow-hover: rgb(255 209 102 / 0.5);
+	--color-letter-g: #3399FE;
+	--color-letter-o1-e: #FE0000;
+	--color-letter-o2: #FFC000;
+	--color-letter-l: #00AF50;
 }
 
 
 /* custom color palette for users who prefer dark theme */
 @media (prefers-color-scheme: dark) {
 	:root {
-		--color-background: rgb(0, 2, 35);
-		--color-text-border: #eee;
+		/* lego: set colors for individual blocks */
+		--color-lego-background: rgb(0, 2, 35);
+		--color-lego-text-border: #eee;
 
-		/* set colors for individual blocks */
 		--color-l-block: #FA3664;
 		--color-e-block: #F8C755;
 		--color-g-block: #00B182;
 		--color-o-block: #157FA2;
 
-		--color-button: #157FA2;
-		--color-button-shadow: rgb(21 127 162 / 0.5); 
-		
-		--color-button-hover: #06D6A0;
-		--color-button-shadow-hover: rgb(6 214 160 / 0.5);
+		/* google: set colors for letters */
+		--color-google-background: rgb(68, 68, 68);
+
+		--color-letter-g: #3399FE;
+		--color-letter-o1-e: #FE0000;
+		--color-letter-o2: #FFC000;
+		--color-letter-l: #00AF50;
+
 	}
 }
 
@@ -82,17 +97,34 @@ body {
 	align-items: center;
 	flex-direction: column;
 
-	height: 90vh; /* idk how this works, if height is 100 h1 is not centered properly */
+	height: 100vh;
 	
 	margin: 0;
-	
-	background-color:var(--color-background);
-  	font-family: "legothick", sans-serif;
-  	text-transform: uppercase;
-  	color:var(--color-text);
+
 }
 
-h1 {	
+section {
+	width: 100vw;
+	height: 50vh;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/** LEGO **/
+/* STYLES */
+
+section:first-of-type {
+	font-family: "legothick", sans-serif;
+	text-transform: uppercase;
+
+	color:var(--color-lego-text);
+	background-color:var(--color-lego-background);
+}
+
+
+section:first-of-type h1 {	
 	position: relative;
 
 	margin: 0;
@@ -101,10 +133,36 @@ h1 {
 	letter-spacing: -.1em;
 
 	/* white outline for the text using a stacked textshadow */
-	text-shadow: .05em .05em var(--color-text-border), -.05em -.05em var(--color-text-border), .05em -.05em var(--color-text-border), -.05em .05em var(--color-text-border);
+	text-shadow: .05em .05em var(--color-lego-text-border), -.05em -.05em var(--color-lego-text-border), .05em -.05em var(--color-lego-text-border), -.05em .05em var(--color-lego-text-border);
 }
 
-h1 span {
+/* h1::before {
+	content: 'play';
+
+	position: absolute; 
+	top: 6em;
+	right: 0;
+
+	cursor: pointer;
+
+	background: var(--color-button);
+	border-radius: 20%;
+
+	padding: .5em .6em .5em .5em;
+	margin: .5em;
+
+	font-size: 1em;
+
+	box-shadow: 4px 6px 14px 6px var(--color-button-shadow);
+}
+
+h1:hover::before {
+	background: var(--color-button-hover);
+	box-shadow: 4px 6px 14px 6px var(--color-button-shadow-hover);
+} */
+
+
+section:first-of-type h1 span {
 	position: absolute; 
 
 	padding: .5em .6em .5em .5em;
@@ -113,7 +171,7 @@ h1 span {
 }
 
 /* before and after pseudoelements create top squares on blocks */
-h1 span::before {
+section:first-of-type h1 span::before {
 	content: ''; /* include for the shape to show up */
 
 	position: absolute; 
@@ -127,7 +185,7 @@ h1 span::before {
 	border-radius: 10%; /* round off corners */
 }
 
-h1 span::after {
+section:first-of-type h1 span::after {
 	content: ''; /* include for the shape to show up */
 
 	position: absolute;
@@ -141,7 +199,7 @@ h1 span::after {
 	border-radius: 10%;
 }
 
-h1 span:first-of-type {
+section:first-of-type h1 span:first-of-type {
 	z-index: 1; /* positions l block as first layer (1) */
 	right: 1.4em;
 
@@ -150,12 +208,12 @@ h1 span:first-of-type {
 	background: var(--color-l-block);
 }
 
-h1 span:first-of-type::before, 
-h1 span:first-of-type::after {
+section:first-of-type h1 span:first-of-type::before, 
+section:first-of-type h1 span:first-of-type::after {
 	background: var(--color-l-block);
 }
 
-h1 span:nth-of-type(2) {
+section:first-of-type h1 span:nth-of-type(2) {
 	z-index: 2; /* positions e block as second layer (2) */
 	right: 1.4em;
 	bottom: -0.5em;
@@ -165,12 +223,12 @@ h1 span:nth-of-type(2) {
 	background: var(--color-e-block);
 }
 
-h1 span:nth-of-type(2)::before, 
-h1 span:nth-of-type(2)::after {
+section:first-of-type h1 span:nth-of-type(2)::before, 
+section:first-of-type h1 span:nth-of-type(2)::after {
 	background: var(--color-e-block);
 }
 
-h1 span:nth-of-type(3) {
+section:first-of-type h1 span:nth-of-type(3) {
 	z-index: 3; /* positions g block as third layer (3) */
 
 	transform: rotate(-150deg);
@@ -180,12 +238,12 @@ h1 span:nth-of-type(3) {
 	background: var(--color-g-block);
 }
 
-h1 span:nth-of-type(3)::before, 
-h1 span:nth-of-type(3)::after {
+section:first-of-type h1 span:nth-of-type(3)::before, 
+section:first-of-type h1 span:nth-of-type(3)::after {
 	background: var(--color-g-block);
 }
 
-h1 span:nth-of-type(4) {
+section:first-of-type h1 span:nth-of-type(4) {
 	z-index: 4; /* positions o block as fourth layer (4) */
 	right: -3.05em;
 
@@ -194,76 +252,107 @@ h1 span:nth-of-type(4) {
 	background: var(--color-o-block);
 }
 
-h1 span:nth-of-type(4)::before, 
-h1 span:nth-of-type(4)::after {
+section:first-of-type h1 span:nth-of-type(4)::before, 
+section:first-of-type h1 span:nth-of-type(4)::after {
 	background: var(--color-o-block);
 }
 
-ul {
-	position: absolute;
-	z-index: 5; /* positions 'buttons' as fifth layer (5) */
-	bottom: 1em;
 
-	display: flex;
-	flex-direction: column;
-
-	padding: 0;
+/** GOOGLE **/
+/** STYLES **/
+section:nth-of-type(2) {
+	font-family: "Product Sans", sans-serif;
+	background-color: var(--color-google-background);
 }
 
-ul li {
-	cursor: pointer;
+section:nth-of-type(2) h1 {
+	margin: 0;
 
-	background: var(--color-button);
-	border-radius: 25%;
-
-	padding: 1em;
-	margin: .5em;
-
-	list-style: none;
-
-	font-size: 1.5em;
-	font-weight: bold;
-
-	box-shadow: 4px 6px 14px 6px var(--color-button-shadow);
-
-	transition: .2s ease-in;
+	font-size: clamp(3em, 8vmin, 4em);
+	text-align: center;
+	letter-spacing: -.05em;
+	white-space: nowrap;
 }
 
-ul li:hover {
-	background: var(--color-button-hover);
-	box-shadow: 4px 6px 14px 6px var(--color-button-shadow-hover);
+section:nth-of-type(2) h1 span {
+	position: relative;
+
+	display: inline-block; /* makes me able to transform the span*/
 }
+
+/* color letters individually */
+section:nth-of-type(2) h1 span:first-of-type,
+section:nth-of-type(2) h1 span:nth-of-type(4) {
+	color: var(--color-letter-g);
+}
+
+section:nth-of-type(2) h1 span:nth-of-type(2),
+section:nth-of-type(2) h1 span:nth-of-type(6) {
+	color: var(--color-letter-o1-e);
+}
+
+section:nth-of-type(2) h1 span:nth-of-type(3) {
+	color: var(--color-letter-o2);
+}
+
+section:nth-of-type(2) h1 span:nth-of-type(5) {
+	color: var(--color-letter-l);
+}
+
+section:nth-of-type(2) h1 span:nth-of-type(2) {
+	position: relative; /* position relative on the letter o for the animation*/
+	z-index: 5; /* also position to the top*/
+}
+
+section:nth-of-type(2) h1 span:nth-of-type(2)::after {
+	content: '';
+
+	position: absolute; 
+	bottom: 0;
+	left: .225em;
+
+	width: .125em;
+	height: .3em;
+	background: var(--color-letter-o1-e);
+
+	/* opacity: 0; /* make invisible so it can appear in animation */
+}
+
+
 
 /**************/
 /* ANIMATIONS */
 /**************/
 
+/* ANIMATION 1: */
+/* LEGO ANIMATION */
+
 /* specify animations for every letter and combination */
-body:hover h1 {
+section:first-of-type:hover  h1 {
 	animation: fall-lego-stack .8s 1 4s ease-in forwards,
 	shake-lego-stack .5s 1 5s normal forwards;
 }
 
-/* Letter L */
-body:hover span:first-of-type {
+/* Block L */
+section:first-of-type:hover span:first-of-type {
 	animation: break-lego-stack-l 1.2s 1 5.5s ease-out forwards;
 }
 
-/* Letter E */
-body:hover span:nth-of-type(2) {
+/* Block E */
+section:first-of-type:hover span:nth-of-type(2) {
 	animation: break-lego-stack-e 1.3s 1 5.5s ease-out forwards;
 }
 
-/* Letter G */
-body:hover span:nth-of-type(3) {
+/* Block G */
+section:first-of-type:hover span:nth-of-type(3) {
 	animation: fall-g-block .3s 1 .5s ease-in-out forwards,
 	move-g-block-left .5s 1 2.2s ease-in-out forwards,
 	stack-lego-blocks-g .8s 1 3s cubic-bezier(.87,.38,1,.99) forwards,
 	break-lego-stack-g 1.3s 1 5.5s ease-out forwards;	
 }
 
-/* Letter O */
-body:hover span:nth-of-type(4) {
+/* Block O */
+section:first-of-type:hover span:nth-of-type(4) {
 	animation: move-o-block-right .5s 1 .5s ease-out forwards, 
 	stack-o-block .8s 1 1.2s cubic-bezier(.87,.38,1,.99) forwards,
 	move-o-block-left .5s 1 2.2s ease-in-out forwards,
@@ -499,7 +588,69 @@ body:hover span:nth-of-type(4) {
 	}
 }
 
+/* ANIMATION 2: */
+/* GOOGLE ANIMATION */
 
+section:nth-of-type(2):hover span:nth-of-type(2) {
+	animation: scale-magnifier .5s 1 ease-in forwards,
+	move-magnifier-right 2.5s 1 .7s ease-in-out forwards,
+	move-magnifier-back 1.5s 1 3.2s ease-in-out forwards;
+}
+
+/* section:nth-of-type(2):hover span:nth-of-type(2)::before {
+	animation: fade-in .2s 1 ease-in forwards;
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+} */
+
+@keyframes scale-magnifier {
+	0% {
+		transform: scale(1) rotate(0deg);
+	}
+	100% {
+		transform: scale(2) rotate(20deg);
+	}
+}
+
+@keyframes move-magnifier-right {
+	0% {
+		transform: scale(2) rotate(20deg) translate(0);
+	}
+	25% {
+		transform: scale(2) rotate(20deg) translate(-.4em, 0);
+	}
+	50% {
+		transform: scale(2) rotate(20deg) translate(.3em, -.1em);
+	}
+	60% {
+		transform: scale(2.5) rotate(10deg) translate(.25em, -.1em);
+	}
+	70% {
+		transform: scale(2.5) rotate(10deg) translate(.25em, -.1em);
+	}
+	100% {
+		transform: scale(2) rotate(-20deg) translate(1.1em, .35em);
+	}
+}
+
+@keyframes move-magnifier-back {
+	0% {
+		transform: scale(2) rotate(-20deg) translate(1.1em, .35em);
+	}
+	60% {
+		transform: scale(2.2) rotate(20deg) translate(.6em, -.3em);
+	}
+	100% {
+		transform: scale(1) rotate(0deg) translate(0);
+	}
+}
 
 
 
@@ -518,9 +669,15 @@ body:hover span:nth-of-type(4) {
 	}
 }
 
-@media only screen and (min-width: 425px) {
-	ul {
+@media only screen and (min-width: 600px) {
+	body {
 		flex-direction: row;
+		justify-content: space-evenly;
+	}
+
+	section {
+		width: 50vw;
+		height: 100vh;
 	}
 
 }
