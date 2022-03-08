@@ -74,7 +74,7 @@ button, summary {
 		--color-o-block: #157FA2;
 
 		/* google: set colors for letters */
-		--color-google-background: rgb(68, 68, 68);
+		--color-google-background: rgb(86, 86, 86);
 
 		--color-letter-g: #3399FE;
 		--color-letter-o1-e: #FE0000;
@@ -660,11 +660,13 @@ section:nth-of-type(2):hover span:nth-of-type(2) {
 
 /* user prefers reduced motion */
 @media (prefers-reduced-motion: reduce) {
-	body:hover h1,
-	body:hover span:first-of-type,
-	body:hover span:nth-of-type(2),
-	body:hover span:nth-of-type(3),
-	body:hover span:nth-of-type(4) {
+	/* selects all animations and pauses them */
+	section:first-of-type:hover  h1,
+	section:first-of-type:hover span:first-of-type,
+	section:first-of-type:hover span:nth-of-type(2),
+	section:first-of-type:hover span:nth-of-type(3),
+	section:first-of-type:hover span:nth-of-type(4),
+	section:nth-of-type(2):hover span:nth-of-type(2) {
 		animation-play-state: paused;
 	}
 }
@@ -679,5 +681,4 @@ section:nth-of-type(2):hover span:nth-of-type(2) {
 		width: 50vw;
 		height: 100vh;
 	}
-
 }
