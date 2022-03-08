@@ -65,19 +65,42 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   ### Je uitkomst - karakteristiek screenshot(s):
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="uitomst opdracht 1">
+  <img src="readme-images/desktop-both.png" width="375px" alt="desktop">
+  <img src="readme-images/mobile-both.png" width="375px" alt="mobile">
+  
+  #### Lego
+  <img src="readme-images/animatie1.png" width="375px" alt="code 1">
+  <img src="readme-images/lego-1.png" width="375px" alt="animatie 1 -1">
+  <img src="readme-images/lego-2.png" width="375px" alt="animatie 1 -2">
+  <img src="readme-images/lego-3.png" width="375px" alt="animatie 1 -3">
+  
+  #### Google
+  <img src="readme-images/animatie2.png" width="375px" alt="code 2">
+  <img src="readme-images/google-1.png" width="375px" alt="animatie 2 -1">
+  <img src="readme-images/google-2.png" width="375px" alt="animatie 2 -2">
+  <img src="readme-images/google-3.png" width="375px" alt="animatie 2 -3">
   
 
   ### Dit ging goed/Heb ik geleerd: 
   Korte omschrijving met plaatje(s)
+    - Vormen maken met ::before & ::after pseudoelements. Ik heb hiermee de dots bovenop de legoblokjes gemaakt en het handvat van de magnifier. Ik heb before & after voorheen niet goed begrepen, nu ik ermee heb gewerkt is het makkelijker en ook zeer bruikbaar.
+  - Ik ben erg blij met de animaties die ik heb gemaakt voor beide merken. De lego animatie is het langst en heeft de meeste keyframes en details. Hij flowt goed en het ritme past goed bij het concept van 'bouwen' met Lego blocks. Het heeft een vrolijke sfeer en kleuren. Ik heb geleerd over verschillende transform properties en hier ook veel aan getweaked.
+  <img src="readme-images/topper-1.png" width="375px" alt="lego blokjes bouwen">
+  - De animatie voor Google is eenvoudiger, maar dit past ook bij het merk. Het is strak, maar wel speels. 
+  - Ik heb in het design rekening gehouden met een dark mode en ook prefers reduced motion, beide opties werken! 
+  <img src="readme-images/dark-mode.png" width="375px" alt="darkmode">
+  - Toepassingen voor responsive design zijn minimaal maar effectief. Animaties werken goed op elk formaat.
 
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="top">
-
+ 
 
   ### Dit was lastig/Is niet gelukt:
   Korte omschrijving met plaatje(s)
-
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="bummer">
+    - Ik wilde twee animaties maken voor Lego met dezelfde H1 met behulp van een 'button' waar je overheen kon hoveren. Ik heb het met een ul/li samenstelling geprobeerd en ook
+met een before en after. Het probleem bij de eerste optie was dat de animatie niet afspeelt omdat de ul niet in de h1 zat, ik had geprobeerd deze in de h1 te plaatsen maar hierdoor roteerde de buttons mee. Hetzelfde gebeurde ook bij de before: omdat deze in de h1 stond, draaide hij mee.
+    <img src="readme-images/niet-gelukt-1.png" width="375px" alt="niet gelukt 1">
+    - Voor de Google animatie wilde ik dat de before pas zichtbaar zou worden wanneer de animatie plaatsvond. Ik had de before een opacity van 0 gegeven en deze aangeschakeld met behulp van een CSS animatie. De before vorm bleef echter constant ontzichtbaar. 
+    <img src="readme-images/niet-gelukt-2.png" width="375px" alt="niet gelukt 2">
+  - Ik heb de root enkel gebruikt voor kleuren, ik vond andere properties waarmee ik werkte niet logisch voor in de root.
 </details>
 
 
