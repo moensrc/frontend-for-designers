@@ -70,15 +70,15 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   
   #### Lego
   <img src="readme-images/animatie1.png" width="100%" alt="code 1">
-  <img src="readme-images/lego-1.png" width="33%" alt="animatie 1 -1">
-  <img src="readme-images/lego-2.png" width="33%" alt="animatie 1 -2">
-  <img src="readme-images/lego-3.png" width="33%" alt="animatie 1 -3">
+  <img src="readme-images/lego-1.png" width="30%" alt="animatie 1 -1">
+  <img src="readme-images/lego-2.png" width="30%" alt="animatie 1 -2">
+  <img src="readme-images/lego-3.png" width="30%" alt="animatie 1 -3">
   
   #### Google
-  <img src="readme-images/animatie2.png" width="40%" alt="code 2">
-  <img src="readme-images/google-1.png" width="20%" alt="animatie 2 -1">
-  <img src="readme-images/google-2.png" width="20%" alt="animatie 2 -2">
-  <img src="readme-images/google-3.png" width="20%" alt="animatie 2 -3">
+  <img src="readme-images/animatie2.png" width="50%" alt="code 2">  <br>
+  <img src="readme-images/google-1.png" width="30%" alt="animatie 2 -1">
+  <img src="readme-images/google-2.png" width="30%" alt="animatie 2 -2">
+  <img src="readme-images/google-3.png" width="30%" alt="animatie 2 -3">
   
 
   ### Dit ging goed/Heb ik geleerd: 
