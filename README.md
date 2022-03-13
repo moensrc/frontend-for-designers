@@ -34,7 +34,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 ## Opdracht 1 plan
 
-<details open>
+<details>
   <summary>uitwerken na schetsen idee (voor week 2)</summary>
 
 
@@ -59,7 +59,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 ## Opdracht 1 reflectie
 
-<details open>
+<details>
   <summary>uitwerken bij afronden opdracht (voor week 3)</summary>
 
 
@@ -112,20 +112,21 @@ met een before en after. Het probleem bij de eerste optie was dat de animatie ni
 
 ## Opdracht 2 plan
 
-<details>
+<details open>
   <summary>uitwerken na schetsen idee (voor week 4)</summary>
 
 
   ### Je ontwerp:
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="ontwerp opdracht 2">
+  <img src="readme-images/bingo-flow.jpg" width="90%" alt="ontwerp opdracht 2">
 
 
   ### Je ambitie: 
   Aan deze technieken/punten wil ik werken:
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - Algemene Javascript skill verbeteren
+  - Bingokaart genereren met JS math
+  - Responsiveness met grid/layouts
+  - CSS animaties als micro-animations
+  - JS Events 
 </details>
 
 
