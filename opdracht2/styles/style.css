@@ -1,18 +1,6 @@
-/* CSS Document */
-
 /*********/
 /* FONTS */
 /*********/
-@font-face {
-	font-family: 'eenfont';
-	src: url('../fonts/eenfont.woff2') format('woff2'),
-			 url('../fonts/eenfont.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-
-}
-
-
 
 
 
@@ -21,6 +9,7 @@
 /**************/
 *, *::after, *::before {
   box-sizing:border-box;  
+  
 }
 
 button, summary {
@@ -36,8 +25,15 @@ button, summary {
 /*********************/
 :root {
 	/* startje */
-	--color-main:#111;
-	--color-background:#eee;
+	--color-main:#fff;
+	--color-main-background:#3A0CA3;
+	--color-mycards-background:#4CC9F0;
+
+	--color-bingo: #F72585;
+	--color-party: #4CC9F0;
+	--color-ball: #ffd000;
+	--color-ball-shadow: #2B0F6A;
+	--color-button: #F72585;
 }
 
 
@@ -48,10 +44,101 @@ button, summary {
 /* JOUW STYLING */
 /****************/
 body {
-  font-family:eenfont, sans-serif;
-  color:var(--color-main);
-  background-color:var(--color-background);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	margin: 0;
+
+  	color: var(--color-main);
+  	background-color: var(--color-main-background);
 }
 
 /* jouw code */
+h1 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 
+	font-size: 2.75em;
+
+	margin: .5em;
+}
+
+h1 span:first-of-type {
+	color: var(--color-bingo);
+}
+
+h1 span:nth-of-type(2) {
+	font-family: calgary-script-ot, sans-serif;
+	font-weight: 400;
+	color: var(--color-party);
+
+	transform: translateY(-.5em);
+}
+
+h1 span:first-of-type, 
+h2, 
+h3,
+button {
+	font-family: sofia-pro-soft, sans-serif;
+	font-weight: 700;
+	
+}
+
+h2 {
+	font-size: clamp(1.8em, 6vw, 2.5em);
+}
+
+h3 { /* bingo ball */
+	position: relative;
+
+	height: fit-content;
+
+	margin: 0;
+	padding: .3em .4em;
+
+	font-size: 4em;
+	background-color: var(--color-ball);
+	border-radius: 100%;
+}
+
+h3::after {
+	content: '';
+
+	position: absolute;
+	z-index: -1;
+
+	bottom: -.25em;
+	left: 0;
+	right: 0;
+
+	width: 2em;
+	height: .6em;
+	border-radius: 100%;
+	background-color: var(--color-ball-shadow);
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	
+}
+
+section button {
+	width: 6em;
+
+	margin: 1.5em;
+	padding: .5em;
+
+	font-size: 1.5em;
+	border: 0;
+
+	background-color: var(--color-button);
+	border-radius: 20%/50%; /* two values provide pill-shape */
+	box-shadow: 0 .4em var(--color-ball-shadow);
+}
