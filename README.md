@@ -14,6 +14,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
 ## Bronnenlijst
+### Opdracht 1
   1. CSS Animations properties (w3schools) https://www.w3schools.com/css/css3_animations.asp
   2. Include TTF font file in CSS (StackOverflow) https://stackoverflow.com/questions/24990554/how-to-include-a-font-ttf-using-css
   3. CSS z-index positions & rules (w3schools) https://www.w3schools.com/cssref/pr_pos_z-index.asp
@@ -30,6 +31,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   14. CSS text-shadow and text-stroke for font borders (DelftStack) https://www.delftstack.com/howto/css/css-font-border/#use-the-text-shadow-property-to-apply-borders-to-font-in-css
   15. CSS span transform (StackOverflow) https://stackoverflow.com/questions/24961795/how-can-i-use-css3-transform-on-a-span
 
+### Opdracht 2
   1. CSS Even Circle around text (StackOverflow) https://stackoverflow.com/questions/16615403/how-to-draw-a-circle-with-text-in-the-middle
   2. CSS Clamp values (Mozilla) https://developer.mozilla.org/en-US/docs/Web/CSS/clamp()
   3. CSS Border radius: to achieve pill shaped button (StackOverflow) https://stackoverflow.com/questions/18794947/capsule-shape-using-border-radius-without-a-set-width-or-height
