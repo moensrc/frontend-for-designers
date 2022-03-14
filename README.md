@@ -30,7 +30,11 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   14. CSS text-shadow and text-stroke for font borders (DelftStack) https://www.delftstack.com/howto/css/css-font-border/#use-the-text-shadow-property-to-apply-borders-to-font-in-css
   15. CSS span transform (StackOverflow) https://stackoverflow.com/questions/24961795/how-can-i-use-css3-transform-on-a-span
 
-
+  1. CSS Even Circle around text (StackOverflow) https://stackoverflow.com/questions/16615403/how-to-draw-a-circle-with-text-in-the-middle
+  2. CSS Clamp values (Mozilla) https://developer.mozilla.org/en-US/docs/Web/CSS/clamp()
+  3. CSS Border radius: to achieve pill shaped button (StackOverflow) https://stackoverflow.com/questions/18794947/capsule-shape-using-border-radius-without-a-set-width-or-height
+  4. CSS Border radius values (Mozilla) https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
+  5. CSS box-shadow values (Mozilla) https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow
 
 ## Opdracht 1 plan
 
