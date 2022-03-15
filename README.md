@@ -37,6 +37,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   3. CSS Border radius: to achieve pill shaped button (StackOverflow) https://stackoverflow.com/questions/18794947/capsule-shape-using-border-radius-without-a-set-width-or-height
   4. CSS Border radius values (Mozilla) https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
   5. CSS box-shadow values (Mozilla) https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow
+  6. Reading: HTML/CSS/JS Generate Bingo cards (GitHub) https://github.com/ktkaushik/bingo-card-generator/blob/master/bingo-card.js
+  7. Reading: HTML/CSS/JS Generate Bingo cards (CarlaukBlog) https://carlaukblog.wordpress.com/2014/11/20/javascript-as-a-tool-create-a-bingo-card/
 
 ## Opdracht 1 plan
 
