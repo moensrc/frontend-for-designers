@@ -25,7 +25,7 @@ button, summary {
 /*********************/
 :root {
 	/* startje */
-	--color-main:#fff;
+	--color-main:#FFF;
 	--color-main-background:#3A0CA3;
 	--color-mycards-background:#4CC9F0;
 
@@ -34,6 +34,12 @@ button, summary {
 	--color-ball: #ffd000;
 	--color-shadow: #2B0F6A;
 	--color-button: #F72585;
+
+	--color-bingo-card-text: #2B0F6A;
+	--color-bingo-card-background: #FFF;
+	--color-bingo-card-header: #F72585;
+	--color-bingo-card-border: #D8D8D8;
+
 }
 
 
@@ -69,11 +75,11 @@ h1 {
 	text-shadow: 0 .2em .2em var(--color-shadow);
 }
 
-h1 span:first-of-type {
+h1 span:first-of-type { /* BINGO */
 	color: var(--color-bingo);
 }
 
-h1 span:nth-of-type(2) {
+h1 span:nth-of-type(2) { /* PARTY */
 	font-family: calgary-script-ot, sans-serif;
 	font-weight: 400;
 	color: var(--color-party);
@@ -126,6 +132,7 @@ h3::after {
 	background-color: var(--color-shadow);
 }
 
+/* SECTION with number ball */
 section {
 	display: flex;
 	flex-direction: column;
@@ -167,8 +174,7 @@ button {
 	box-shadow: 0 .4em var(--color-shadow);
 }
 
-/* Aside: list of bingocards */
-
+/* ASIDE: list of bingocards */
 aside {
 	display: flex;
 	flex-direction: column;
@@ -197,6 +203,46 @@ aside button {
 }
 
 
+
+/* TABLE (BINGO CARD) */
+table,
+tr,
+th,
+td {
+	margin: 0;
+	padding: 0;
+}
+
+table {
+	width: 15em;
+	height: 15em;
+
+	font-family: sofia-pro-soft, sans-serif;
+	font-weight: 700;
+	text-align: center;
+
+	border: none;
+	background-color: var(--color-bingo-card-background);
+	color: var(--color-bingo-card-text);
+}
+
+table tr {
+	text-transform: uppercase;
+}
+
+table tr:first-of-type {
+	border: var(--color-bingo-card-header);
+	background-color: var(--color-bingo-card-header);
+}
+
+table tr th {
+	width: 2em;
+	height: 2em;
+}
+
+table td {
+	border: 5px var(--color-bingo-card-border);
+}
 
 
 
