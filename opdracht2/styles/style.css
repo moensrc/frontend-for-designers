@@ -32,7 +32,7 @@ button, summary {
 	--color-bingo: #F72585;
 	--color-party: #4CC9F0;
 	--color-ball: #ffd000;
-	--color-ball-shadow: #2B0F6A;
+	--color-shadow: #2B0F6A;
 	--color-button: #F72585;
 }
 
@@ -64,9 +64,9 @@ h1 {
 
 	font-size: 2.75em;
 
-	margin: .5em;
+	margin: .2em 0 0 0;
 
-	text-shadow: 0 .2em .2em var(--color-ball-shadow);
+	text-shadow: 0 .2em .2em var(--color-shadow);
 }
 
 h1 span:first-of-type {
@@ -78,20 +78,23 @@ h1 span:nth-of-type(2) {
 	font-weight: 400;
 	color: var(--color-party);
 
-	transform: translateY(-.5em);
+	transform: translateY(-.6em);
 }
 
 h1 span:first-of-type, 
 h2, 
 h3,
-button {
+button,
+li {
 	font-family: sofia-pro-soft, sans-serif;
 	font-weight: 700;
-	
+	text-align: center;
 }
 
 h2 {
-	font-size: clamp(1.8em, 6vw, 2.5em);
+	margin:  0 0 .5em 0;
+
+	font-size: clamp(1.8em, 6vw, 2em);
 }
 
 h3 { /* bingo ball */
@@ -99,7 +102,7 @@ h3 { /* bingo ball */
 
 	height: fit-content;
 
-	margin: 1em;
+	margin: .2em;
 	padding: .3em .4em;
 
 	font-size: 4em;
@@ -120,7 +123,7 @@ h3::after {
 	width: 2em;
 	height: .6em;
 	border-radius: 100%;
-	background-color: var(--color-ball-shadow);
+	background-color: var(--color-shadow);
 }
 
 section {
@@ -131,18 +134,37 @@ section {
 	
 }
 
+ul {
+	display: flex;
+	flex-direction: row;
+	list-style-type: none;
+
+	padding: 0;
+}
+
+ul li {
+	padding: .8em;
+	margin: .25em;
+
+	background-color: var(--color-ball);
+	border-radius: 100%;
+
+	color: var(--color-main-background);
+}
+
 button {
 	width: 6em;
+	height: auto;
 
-	margin: 1.5em;
+	margin: .6em;
 	padding: .5em;
 
-	font-size: 1.5em;
+	font-size: 1.2em;
 	border: 0;
 
 	background-color: var(--color-button);
 	border-radius: 20%/50%; /* two values provide pill-shape */
-	box-shadow: 0 .4em var(--color-ball-shadow);
+	box-shadow: 0 .4em var(--color-shadow);
 }
 
 /* Aside: list of bingocards */
@@ -161,18 +183,16 @@ aside {
 	z-index: 2; /* places above all content */
 
 	transform: translateY(80%); /* moves aside 80% down (partly out of viewport) */
-	transition: 0.5s; 
+
 
 	background-color: var(--color-mycards-background);
 }
 
-aside.showList {
+aside.showList { /* will push aside upwards when JS event */
 	transform: translateY(10%);
 }
 
 aside button {
-	margin: 0;
-
 	font-size: 1em;
 }
 
@@ -183,3 +203,32 @@ aside button {
 /****************/
 /* MEDIA QUERIES*/
 /****************/
+@media only screen and (min-width: 550px) {
+	body {
+		flex-direction: row;	
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
+
+	section {
+		width: 50vw;
+	}
+
+	button {
+		margin: 3em 0 2em 0;
+	}
+
+	aside {
+		position: relative;
+		height: 100vw;
+		width: 50vw;
+
+		top: initial;
+		bottom: initial;
+		left: initial;
+		right: initial;
+
+		transform: translateY(0);
+	}
+
+}
