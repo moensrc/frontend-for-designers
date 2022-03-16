@@ -31,14 +31,14 @@ button, summary {
 
 	--color-bingo: #F72585;
 	--color-party: #4CC9F0;
-	--color-ball: #ffd000;
+	--color-ball: #FFD000;
 	--color-shadow: #2B0F6A;
 	--color-button: #F72585;
 
 	--color-bingo-card-text: #2B0F6A;
+	--color-bingo-card-stamp: #FFD000;
 	--color-bingo-card-background: #FFF;
 	--color-bingo-card-header: #F72585;
-	--color-bingo-card-border: #D8D8D8;
 
 }
 
@@ -98,14 +98,15 @@ li {
 }
 
 h2 {
-	margin:  0 0 .5em 0;
+	margin: .5em 0; /* margin top&bottom but not sides */
 
-	font-size: clamp(1.8em, 6vw, 2em);
+	font-size: clamp(1.8em, 6vw, 2em); /* clamp font-size for h2, max 2em*/
 }
 
 h3 { /* bingo ball */
 	position: relative;
 
+	width: 2em; /* ensures the ball is always round: even when the number only has 1 digit */
 	height: fit-content;
 
 	margin: .2em;
@@ -117,11 +118,10 @@ h3 { /* bingo ball */
 }
 
 h3::after {
-	content: '';
+	content: ''; /* needs content to show up */
 
 	position: absolute;
-	z-index: -1;
-
+	z-index: -1; /* position shadow behind the bingo ball */
 	bottom: -.25em;
 	left: 0;
 	right: 0;
@@ -138,13 +138,12 @@ section {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	
 }
 
 ul {
 	display: flex;
 	flex-direction: row;
-	list-style-type: none;
+	list-style-type: none; /* remove list style from ul */
 
 	padding: 0;
 }
@@ -162,15 +161,14 @@ ul li {
 button {
 	width: 6em;
 	height: auto;
-
 	margin: .6em;
 	padding: .5em;
 
 	font-size: 1.2em;
-	border: 0;
 
+	border: 0;
+	border-radius: 20%/50%; /* two values make pill-shaped button */
 	background-color: var(--color-button);
-	border-radius: 20%/50%; /* two values provide pill-shape */
 	box-shadow: 0 .4em var(--color-shadow);
 }
 
@@ -189,7 +187,7 @@ aside {
 	z-index: 2; /* places above all content */
 
 	transform: translateY(80%); /* moves aside 80% down (partly out of viewport) */
-
+	transition: .25s; /* transition for opening menu */
 
 	background-color: var(--color-mycards-background);
 }
@@ -211,11 +209,15 @@ th,
 td {
 	margin: 0;
 	padding: 0;
+
+	line-height: 2em;
+
+	border-collapse: collapse;
+	/* border: 2px var(--color-bingo-card-border); */
 }
 
 table {
 	width: 15em;
-	height: 15em;
 
 	font-family: sofia-pro-soft, sans-serif;
 	font-weight: 700;
@@ -231,18 +233,57 @@ table tr {
 }
 
 table tr:first-of-type {
-	border: var(--color-bingo-card-header);
 	background-color: var(--color-bingo-card-header);
 }
 
-table tr th {
-	width: 2em;
-	height: 2em;
+table tr th,
+table tr td {
+	width: 2.6em;
+	height: 3em;
 }
 
-table td {
-	border: 5px var(--color-bingo-card-border);
+table tr td {
+	cursor: pointer;
+
+	transition: .2s; /* transition helps stamp to fade in */
 }
+
+
+table tr td.stamp { /* this class is added with JS when clicked */
+	background-color: var(--color-bingo-card-stamp);
+	border-radius: 100%;
+}
+
+
+
+
+
+/**************/
+/* ANIMATIONS */
+/**************/
+
+/* h3.roll {
+	animation: ball-rolls .5s 1 ease-in;
+}
+
+@keyframes ball-rolls {
+	0% {
+		transform: translateY(0);
+	}
+	30% {
+		transform: translateY(2em);
+	}
+	45% {
+		transform: translateY(0);
+	}
+	65% {
+		transform: translateY(1em);
+	}
+	100% {
+		transform: translateY(0);
+	}
+} */
+
 
 
 
@@ -274,7 +315,11 @@ table td {
 		left: initial;
 		right: initial;
 
-		transform: translateY(0);
+		transform: translateY(0%);
+	}
+
+	aside.showList {
+		transform: translateY(0%);
 	}
 
 }
