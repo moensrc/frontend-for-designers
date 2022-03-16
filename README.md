@@ -42,6 +42,9 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   8. JS Toggle ClassList on multiple items (StackOverflow) https://stackoverflow.com/questions/38763103/javascript-queryselectorall-classlist-toggle-not-working-as-expected
   9. JS This operator (Mozilla) https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
   10. JS ForEach method (w3schools) https://www.w3schools.com/jsref/jsref_foreach.asp
+  11. JS generate unique number (Dev.to) https://dev.to/sagdish/generate-unique-non-repeating-random-numbers-g6g
+  12. JS generate unique number with range (Thewebdev) https://thewebdev.info/2021/05/15/how-to-generate-unique-random-numbers-between-1-and-100-with-javascript/
+  13. JS generate unique number with range (Codepen van Sanne) https://codepen.io/shooft/pen/bGaVRVV
 
 ## Opdracht 1 plan
 
