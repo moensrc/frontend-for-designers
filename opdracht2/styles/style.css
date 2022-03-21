@@ -7,6 +7,7 @@
 /**************/
 /* CSS REMEDY */
 /**************/
+
 *, *::after, *::before {
   box-sizing:border-box;  
   
@@ -24,8 +25,7 @@ button, summary {
 /* CUSTOM PROPERTIES */
 /*********************/
 :root {
-	/* startje */
-	--color-main:#FFF;
+	--color-main-text:#FFF;
 	--color-main-background:#3A0CA3;
 	--color-mycards-background:#4CC9F0;
 
@@ -33,13 +33,19 @@ button, summary {
 	--color-party: #4CC9F0;
 	--color-ball: #FFD000;
 	--color-shadow: #2B0F6A;
+
 	--color-button: #F72585;
+	--color-button-text: #2B0F6A;
+
+	--color-button-hover: #2B0F6A;
+	--color-button-text-hover: #FFF;
+	--color-button-hover-border: #F72585;
+	--color-button-hover-shadow: #F72585;
 
 	--color-bingo-card-text: #2B0F6A;
 	--color-bingo-card-stamp: #FFD000;
 	--color-bingo-card-background: #FFF;
 	--color-bingo-card-header: #F72585;
-
 }
 
 
@@ -49,6 +55,7 @@ button, summary {
 /********/
 /* BODY */
 /********/
+
 body {
 	display: flex;
 	flex-direction: column;
@@ -57,7 +64,7 @@ body {
 
 	margin: 0;
 
-  	color: var(--color-main);
+  	color: var(--color-main-text);
   	background-color: var(--color-main-background);
 }
 
@@ -117,7 +124,7 @@ h3 { /* bingo ball */
 	border-radius: 100%;
 }
 
-h3::after {
+h3::before {
 	content: ''; /* needs content to show up */
 
 	position: absolute;
@@ -130,6 +137,8 @@ h3::after {
 	height: .6em;
 	border-radius: 100%;
 	background-color: var(--color-shadow);
+
+	transition: .1s;
 }
 
 /* SECTION with number ball */
@@ -144,18 +153,35 @@ ul {
 	display: flex;
 	flex-direction: row;
 	list-style-type: none; /* remove list style from ul */
+	align-items: center;
 
 	padding: 0;
 }
 
 ul li {
+	width: 2.8em;
+	height: 2.8em;
+
 	padding: .8em;
 	margin: .25em;
 
+	line-height: 1.1;
+	text-align: center;
+	color: var(--color-main-background);
+
 	background-color: var(--color-ball);
 	border-radius: 100%;
+	
+}
 
-	color: var(--color-main-background);
+ul li.hide {
+	visibility: hidden;
+}
+
+ul li:first-of-type {
+	transform: scale(1.25);
+
+	margin: .5em;
 }
 
 button {
@@ -170,6 +196,18 @@ button {
 	border-radius: 20%/50%; /* two values make pill-shaped button */
 	background-color: var(--color-button);
 	box-shadow: 0 .4em var(--color-shadow);
+
+	opacity: 1;
+	transition: .25s;
+}
+
+button:hover {
+	transform: scale(1.1);
+
+	color: var(--color-button-text-hover);
+	border: .1em solid var(--color-button-hover-border);
+	background-color: var(--color-button-hover);
+	box-shadow: 0 .2em var(--color-button-hover-shadow);
 }
 
 /* ASIDE: list of bingocards */
@@ -216,6 +254,7 @@ td {
 	/* border: 2px var(--color-bingo-card-border); */
 }
 
+/* Bingocard as table */
 table {
 	width: 15em;
 
@@ -262,28 +301,70 @@ table tr td.stamp { /* this class is added with JS when clicked */
 /* ANIMATIONS */
 /**************/
 
-/* h3.roll {
-	animation: ball-rolls .5s 1 ease-in;
+h3.roll {
+	animation: roll-ball 1.2s 1 ease-in-out;
 }
 
-@keyframes ball-rolls {
+/* h3.roll::before  {
+	animation: fade-away .2s 1 ease-in forwards;
+} */
+
+@keyframes roll-ball {
 	0% {
-		transform: translateY(0);
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* @keyframes fade-away {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+} */
+
+/* @keyframes ball-bounce {
+	0% {
+		transform: translateY(0) scale(1);
 	}
 	30% {
-		transform: translateY(2em);
+		transform: translateY(-1.2em) scale(.75);
 	}
 	45% {
 		transform: translateY(0);
 	}
 	65% {
-		transform: translateY(1em);
+		transform: translateY(-.6em) scale(.9);
 	}
 	100% {
 		transform: translateY(0);
 	}
-} */
+}
 
+@keyframes ball-bounce-shadow {
+	0% {
+		transform: translateY(0) scale(1);
+	}
+	30% {
+		transform: translateY(1.2em) scale(.6);
+	}
+	45% {
+		transform: translateY(1.2em) scale(1);
+	}
+	50% {
+		transform: translateY(1.2em) scale(.7);
+	}
+	100% {
+		transform: translateY(1.2em) scale(1);
+	}
+} */
 
 
 
@@ -307,7 +388,7 @@ table tr td.stamp { /* this class is added with JS when clicked */
 
 	aside {
 		position: relative;
-		height: 100vw;
+		height: 100vh;
 		width: 50vw;
 
 		top: initial;
