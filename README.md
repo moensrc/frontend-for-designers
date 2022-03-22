@@ -45,9 +45,10 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   11. JS generate unique number (Dev.to) https://dev.to/sagdish/generate-unique-non-repeating-random-numbers-g6g
   12. JS generate unique number with range (Thewebdev) https://thewebdev.info/2021/05/15/how-to-generate-unique-random-numbers-between-1-and-100-with-javascript/
   13. JS generate unique number with range (Codepen van Sanne) https://codepen.io/shooft/pen/bGaVRVV
-  14. CSS Animations in JS (StackOverflow) https://stackoverflow.com/questions/44846614/trigger-css-animations-in-javascript
-  15. CSS Animating Pseudoelements (CSS Animation) https://cssanimation.rocks/nl/pseudo-elements/
-  16. 
+  14. JS forEach.call (StackOverflow) https://stackoverflow.com/questions/16053357/what-does-foreach-call-do-in-javascript
+  15. CSS Animations in JS (StackOverflow) https://stackoverflow.com/questions/44846614/trigger-css-animations-in-javascript
+  16. CSS Animating Pseudoelements (CSS Animation) https://cssanimation.rocks/nl/pseudo-elements/
+  17. 
 
 ## Opdracht 1 plan
 
