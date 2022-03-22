@@ -25,15 +25,18 @@ button, summary {
 /* CUSTOM PROPERTIES */
 /*********************/
 :root {
+	/* default text & background */
 	--color-main-text:#FFF;
 	--color-main-background:#3A0CA3;
 	--color-mycards-background:#4CC9F0;
 
+	/* decorative colors */
 	--color-bingo: #F72585;
 	--color-party: #4CC9F0;
 	--color-ball: #FFD000;
 	--color-shadow: #2B0F6A;
 
+	/* default button + states */
 	--color-button: #F72585;
 	--color-button-text: #2B0F6A;
 
@@ -42,6 +45,7 @@ button, summary {
 	--color-button-hover-border: #F72585;
 	--color-button-hover-shadow: #F72585;
 
+	/* bingo card */
 	--color-bingo-card-text: #2B0F6A;
 	--color-bingo-card-stamp: #FFD000;
 	--color-bingo-card-background: #FFF;
@@ -52,9 +56,9 @@ button, summary {
 
 
 
-/********/
-/* BODY */
-/********/
+/*****************/
+/* BODY, GENERAL */
+/*****************/
 
 body {
 	display: flex;
@@ -68,7 +72,16 @@ body {
   	background-color: var(--color-main-background);
 }
 
-/* jouw code */
+h1 span:first-of-type, 
+h2, 
+h3,
+button,
+li {
+	font-family: sofia-pro-soft, sans-serif;
+	font-weight: 700;
+	text-align: center;
+}
+
 h1 {
 	display: flex;
 	flex-direction: column;
@@ -80,6 +93,13 @@ h1 {
 	margin: .2em 0 0 0;
 
 	text-shadow: 0 .2em .2em var(--color-shadow);
+}
+
+h1.hide,
+h2.hide,
+h3.hide,
+section button.hide {
+	display: none;
 }
 
 h1 span:first-of-type { /* BINGO */
@@ -94,15 +114,6 @@ h1 span:nth-of-type(2) { /* PARTY */
 	transform: translateY(-.6em);
 }
 
-h1 span:first-of-type, 
-h2, 
-h3,
-button,
-li {
-	font-family: sofia-pro-soft, sans-serif;
-	font-weight: 700;
-	text-align: center;
-}
 
 h2 {
 	margin: .5em 0; /* margin top&bottom but not sides */
@@ -141,47 +152,11 @@ h3::before {
 	transition: .1s;
 }
 
-/* SECTION with number ball */
-section {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
-
 ul {
-	display: flex;
-	flex-direction: row;
 	list-style-type: none; /* remove list style from ul */
-	align-items: center;
-
-	padding: 0;
-}
-
-ul li {
-	width: 2.8em;
-	height: 2.8em;
-
-	padding: .8em;
-	margin: .25em;
-
-	line-height: 1.1;
-	text-align: center;
-	color: var(--color-main-background);
-
-	background-color: var(--color-ball);
-	border-radius: 100%;
 	
-}
-
-ul li.hide {
-	visibility: hidden;
-}
-
-ul li:first-of-type {
-	transform: scale(1.25);
-
-	margin: .5em;
+	padding: 0;
+	margin: 0;
 }
 
 button {
@@ -210,6 +185,54 @@ button:hover {
 	box-shadow: 0 .2em var(--color-button-hover-shadow);
 }
 
+
+
+/* Two elements: Element 1 */
+/* SECTION with number ball */
+section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+section ul {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+}
+
+section ul li {
+	width: 2.8em;
+	height: 2.8em;
+
+	padding: .8em;
+	margin: .25em;
+
+	line-height: 1.1;
+	text-align: center;
+	color: var(--color-main-background);
+
+	background-color: var(--color-ball);
+	border-radius: 100%;
+	
+}
+
+section ul li.hide {
+	visibility: hidden;
+}
+
+section ul li:first-of-type {
+	transform: scale(1.25);
+
+	margin: .5em;
+}
+
+
+
+
+/*  Two elements: Element 2  */
 /* ASIDE: list of bingocards */
 aside {
 	display: flex;
@@ -228,16 +251,18 @@ aside {
 	transition: .25s; /* transition for opening menu */
 
 	background-color: var(--color-mycards-background);
+
+	overflow-y: scroll;
 }
 
 aside.showList { /* will push aside upwards when JS event */
-	transform: translateY(10%);
+	transform: translateY(10%); /* Overflow scroll does not show button when its open, due to the transform not being 0%, what to do? */
 }
+
 
 aside button {
 	font-size: 1em;
 }
-
 
 
 /* TABLE (BINGO CARD) */
@@ -250,22 +275,28 @@ td {
 
 	line-height: 2em;
 
+	border: none;
 	border-collapse: collapse;
-	/* border: 2px var(--color-bingo-card-border); */
 }
 
-/* Bingocard as table */
-table {
+table { 
 	width: 15em;
+	margin: 1em;
 
 	font-family: sofia-pro-soft, sans-serif;
 	font-weight: 700;
 	text-align: center;
 
-	border: none;
 	background-color: var(--color-bingo-card-background);
 	color: var(--color-bingo-card-text);
+
+	/* bingo card is by default invisible */
+	/* display: none; */
 }
+
+/* table.show {
+	display: block;
+} */
 
 table tr {
 	text-transform: uppercase;
@@ -302,33 +333,35 @@ table tr td.stamp { /* this class is added with JS when clicked */
 /**************/
 
 h3.roll {
-	animation: roll-ball 1.2s 1 ease-in-out;
+	animation: rotate-ball 1.2s 1 ease-in-out;
 }
 
-/* h3.roll::before  {
+h3.roll::before  {
 	animation: fade-away .2s 1 ease-in forwards;
-} */
+}
 
-@keyframes roll-ball {
+@keyframes rotate-ball {
 	0% {
 		transform: rotate(0deg);
-	}
-	50% {
-		transform: rotate(180deg);
 	}
 	100% {
 		transform: rotate(360deg);
 	}
 }
 
-/* @keyframes fade-away {
+@keyframes roll-ball-offscreen {
 	0% {
-		opacity: 1;
+
+	}
+	50% {
+
 	}
 	100% {
-		opacity: 0;
+
 	}
-} */
+}
+
+
 
 /* @keyframes ball-bounce {
 	0% {
@@ -363,6 +396,15 @@ h3.roll {
 	}
 	100% {
 		transform: translateY(1.2em) scale(1);
+	}
+} */
+
+/* @keyframes fade-away {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
 	}
 } */
 
