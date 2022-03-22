@@ -1,5 +1,6 @@
 // GLOBAL VARIABLES
 // (GET HTML ELEMENTS)
+var sectionNumbers = document.querySelector("section");
 var headingTitle = document.querySelector("section h1");
 var instructionText = document.querySelector("section h2");
 var bingoBall = document.querySelector("section h3");
@@ -37,10 +38,7 @@ function showMyCards() {
     // Show full list of bingocards in screen (move with class -> transform: translateY())
     myCards.classList.toggle("showList");
 
-    headingTitle.classList.toggle("hide");
-    instructionText.classList.toggle("hide");
-    bingoBall.classList.toggle("hide");
-    buttonNewBall.classList.toggle("hide");
+    sectionNumbers.classList.toggle("moveUp");
 }
 
 
@@ -73,7 +71,7 @@ function newNumber() {
     if (numbersArr.includes(randomNumber)) {
         return newNumber()
     } 
-    // Push number into Array
+    // Push randomNumber into Array
     numbersArr.push(randomNumber);
     // Return the right number that isn't a duplicate
     return randomNumber;
@@ -81,13 +79,14 @@ function newNumber() {
 
 // Function updateBall makes function newNumber generate an unique number between 1-75
 function updateBall() {
-    bingoBall.textContent = newNumber(); // Textcontent is updated with returned random number
-    updateBallList() // Every time we update the ball, ballList of previous numbers is updated
-
-    // Remove & add class '.roll' so every new click resets CSS animation 
+    // Remove & add class '.roll' so every new click resets CSS animation
     bingoBall.classList.remove("roll");
-    bingoBall.offsetWidth;
+    bingoBall.offsetWidth; // This is a hack.. I've tried conditional statements & different orders
     bingoBall.classList.add("roll");
+
+    bingoBall.textContent = newNumber(); // Textcontent is updated with returned random number
+   
+    updateBallList() // Every time we update the ball, ballList of previous numbers is updated
 }
 
 function updateBallList() {
