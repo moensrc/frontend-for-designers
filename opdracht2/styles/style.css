@@ -1,9 +1,3 @@
-/*********/
-/* FONTS */
-/*********/
-
-
-
 /**************/
 /* CSS REMEDY */
 /**************/
@@ -44,6 +38,13 @@ button, summary {
 	--color-button-text-hover: #FFF;
 	--color-button-hover-border: #F72585;
 	--color-button-hover-shadow: #F72585;
+	
+	/* --color-button-focus: #FFF;
+	--color-button-focus-border: #F72585;
+	--color-button-focus-shadow: #F72585;
+
+	--color-button-text-active: #2B0F6A; */
+
 
 	/* bingo card */
 	--color-bingo-card-text: #2B0F6A;
@@ -73,6 +74,7 @@ body {
   	background-color: var(--color-main-background);
 }
 
+body,
 h1 span:first-of-type, 
 h2, 
 h3,
@@ -108,13 +110,11 @@ h1 span:nth-of-type(2) { /* PARTY */
 	transform: translateY(-.6em);
 }
 
-
 h2 {
 	margin: 0 .5em .5em .5em; 
 
 	font-size: clamp(1.8em, 6vw, 2em); /* clamp font-size for h2, max 2em*/
 }
-
 
 h3 { /* bingo ball */
 	position: relative;
@@ -151,6 +151,10 @@ h3 { /* bingo ball */
 	transition: .1s;
 } */
 
+p {
+	margin: 0;
+}
+
 ul {
 	list-style-type: none; /* remove list style from ul */
 	
@@ -167,12 +171,12 @@ button {
 
 	font-size: 1.2em;
 
+	background-color: var(--color-button);
 	border: 0;
 	border-radius: 20%/50%; /* two values make pill-shaped button */
-	background-color: var(--color-button);
 	box-shadow: 0 .4em var(--color-shadow);
-
 	opacity: 1;
+
 	transition: .25s;
 }
 
@@ -180,10 +184,25 @@ button:hover {
 	transform: scale(1.1);
 
 	color: var(--color-button-text-hover);
-	border: .1em solid var(--color-button-hover-border);
 	background-color: var(--color-button-hover);
+	border: .1em solid var(--color-button-hover-border);
 	box-shadow: 0 .2em var(--color-button-hover-shadow);
 }
+
+/* button:focus,
+button:active {
+	outline: none;
+	
+	transform: scale(1.1);
+
+	border: .1em solid var(--color-button-focus-border);
+	background-color: var(--color-button-focus);
+	box-shadow: 0 .2em var(--color-button-focus-shadow);
+}
+
+button:active {
+	color: var(--color-button-text-active);
+} */
 
 
 
@@ -285,6 +304,15 @@ aside ul {
 	flex-wrap: wrap;
 }
 
+aside ul li {
+	/* bingo card is by default invisible */
+	display: none;
+}
+
+aside ul li.show {
+	display: block;
+}
+
 table,
 tr,
 th,
@@ -309,13 +337,7 @@ table {
 	background-color: var(--color-bingo-card-background);
 	color: var(--color-bingo-card-text);
 
-	/* bingo card is by default invisible */
-	/* display: none; */
 }
-
-/* table.show {
-	display: block;
-} */
 
 table tr {
 	text-transform: uppercase;
@@ -327,7 +349,7 @@ table tr:first-of-type {
 
 table tr th,
 table tr td {
-	width: 2.6em;
+	width: 3em;
 	height: 3em;
 }
 
@@ -384,51 +406,6 @@ h3.roll {
 }
 
 
-
-/* @keyframes ball-bounce {
-	0% {
-		transform: translateY(0) scale(1);
-	}
-	30% {
-		transform: translateY(-1.2em) scale(.75);
-	}
-	45% {
-		transform: translateY(0);
-	}
-	65% {
-		transform: translateY(-.6em) scale(.9);
-	}
-	100% {
-		transform: translateY(0);
-	}
-}
-
-@keyframes ball-bounce-shadow {
-	0% {
-		transform: translateY(0) scale(1);
-	}
-	30% {
-		transform: translateY(1.2em) scale(.6);
-	}
-	45% {
-		transform: translateY(1.2em) scale(1);
-	}
-	50% {
-		transform: translateY(1.2em) scale(.7);
-	}
-	100% {
-		transform: translateY(1.2em) scale(1);
-	}
-} */
-
-/* @keyframes fade-away {
-	0% {
-		opacity: 1;
-	}
-	100% {
-		opacity: 0;
-	}
-} */
 
 
 

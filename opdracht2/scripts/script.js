@@ -6,15 +6,17 @@ var instructionText = document.querySelector("section h2");
 var bingoBall = document.querySelector("section h3");
 var buttonNewBall = document.querySelector("section button");
 
-// Create an array from the children of the previousnumbers ul, all li elements are placed in the array
+// Create array from the children of the previousnumbers ul
 var previousNumbers = Array.from(document.querySelector("section ul").children);
 
-var myCards = document.querySelector("aside");
-var myCardsTitle = document.querySelector("aside h2");
-var buttonAddCard = document.querySelector("aside button");
+// Create array from the children of the bingocards ul
+var allCards = Array.from(document.querySelector("aside ul").children);
+var card = -1;
 
-var bingoCard1 = document.querySelector("table:first-of-type");
-var bingoCard2 = document.querySelector("table:nth-of-type(2)");
+var myCardsTab = document.querySelector("aside");
+var myCardsTitle = document.querySelector("aside h2");
+var cardInstruction = document.querySelector("p");
+var buttonAddCard = document.querySelector("aside button");
 
 // Global array will store all previously rolled numbers
 var numbersArr = [];
@@ -29,16 +31,27 @@ var square = document.querySelectorAll("table tr td");
 // TAB / ASIDE
 
 // Click & swipe event for showing bingocards tab
-myCardsTitle.addEventListener("click", showMyCards, false);
+myCardsTitle.addEventListener("click", showMyCardsTab, false);
 // Swipe event here
 
+buttonAddCard.addEventListener("click", addCards, false);
 
 
-function showMyCards() {
+function showMyCardsTab() {
     // Show full list of bingocards in screen (move with class -> transform: translateY())
-    myCards.classList.toggle("showList");
-
+    myCardsTab.classList.toggle("showList");
     sectionNumbers.classList.toggle("moveUp");
+}
+
+
+function addCards() {
+    // adding bingocards 1 at a time
+    card++
+
+    var bingoCard = allCards[card];  
+    bingoCard.classList.add("show");
+
+    // to do: remove/change text that says u dont have cards
 }
 
 
@@ -69,8 +82,8 @@ function newNumber() {
 
     // Check in numbersArr for duplicate: if it includes it, call function again
     if (numbersArr.includes(randomNumber)) {
-        return newNumber()
-    } 
+        return newNumber();
+    }
     // Push randomNumber into Array
     numbersArr.push(randomNumber);
     // Return the right number that isn't a duplicate
@@ -80,7 +93,13 @@ function newNumber() {
 // Function updateBall makes function newNumber generate an unique number between 1-75
 function updateBall() {
     // Remove & add class '.roll' so every new click resets CSS animation
-    bingoBall.classList.remove("roll");
+    if (bingoBall.classList.contains("roll")) {
+        bingoBall.classList.remove("roll");
+
+    } else if (!bingoBall.classList.contains("roll")){
+            bingoBall.classList.add("roll");
+    } 
+
     bingoBall.offsetWidth; // This is a hack.. I've tried conditional statements & different orders
     bingoBall.classList.add("roll");
 
