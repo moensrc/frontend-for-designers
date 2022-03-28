@@ -52,8 +52,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   18. Reading: HTML/CSS/JS Generate Bingo cards (CodePen) https://codepen.io/litalsh/pen/xQMEXg?editors=1010
   19. Reading: HTML/CSS/JS Generate Bingo cards (CodePen) https://codepen.io/FookingPrawns/details/wvGbLX
   20. JS Do While loop (w3schools) https://www.w3schools.com/js/js_loop_while.asp
-
-
+  21. HTML Template tag, to duplicate (w3schools) https://www.w3schools.com/tags/tag_template.asp
 
 
 ## Opdracht 1 plan
