@@ -48,7 +48,13 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   14. JS forEach.call (StackOverflow) https://stackoverflow.com/questions/16053357/what-does-foreach-call-do-in-javascript
   15. CSS Animations in JS (StackOverflow) https://stackoverflow.com/questions/44846614/trigger-css-animations-in-javascript
   16. CSS Animating Pseudoelements (CSS Animation) https://cssanimation.rocks/nl/pseudo-elements/
-  17. 
+  17. Reading: HTML/CSS/JS Generate Bingo cards (CodePen) https://codepen.io/sunya/pen/bBjJMr
+  18. Reading: HTML/CSS/JS Generate Bingo cards (CodePen) https://codepen.io/litalsh/pen/xQMEXg?editors=1010
+  19. Reading: HTML/CSS/JS Generate Bingo cards (CodePen) https://codepen.io/FookingPrawns/details/wvGbLX
+  20. JS Do While loop (w3schools) https://www.w3schools.com/js/js_loop_while.asp
+
+
+
 
 ## Opdracht 1 plan
 
