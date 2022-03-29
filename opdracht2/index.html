@@ -40,12 +40,12 @@
 	<aside>
 		<h2>Mijn Bingokaarten</h2>
 		<p>Je hebt nog geen kaarten!</p>
-
-		<!-- Table as bingocard? -->
-		<ul>
+		<button>Voeg toe</button>
+		
+		<ul> <!-- List of bingocard will include template li's -->
 			<template>
 				<li>
-					<table>
+					<table> <!-- Table as bingocard -->
 						<tr>
 							<th>B</th>
 							<th>I</th>
@@ -94,9 +94,12 @@
 		</ul>
 
 
-		<button>Voeg toe</button>
-
 	</aside>
+
+	<section> 
+		<!-- Show section by adding class when user says: BINGO! -->
+		<h2>Yay! Je hebt bingo!</h2>
+	</section>
 
 	<script src="scripts/script.js"></script>
 </body>

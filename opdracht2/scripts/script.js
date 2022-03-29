@@ -1,13 +1,13 @@
 // GLOBAL VARIABLES
 // (GET HTML ELEMENTS)
-var sectionNumbers = document.querySelector("section");
-var headingTitle = document.querySelector("section h1");
-var instructionText = document.querySelector("section h2");
-var bingoBall = document.querySelector("section h3");
-var buttonNewBall = document.querySelector("section button");
+var sectionNumbers = document.querySelector("section:first-of-type");
+var headingTitle = document.querySelector("section:first-of-type h1");
+var instructionText = document.querySelector("section:first-of-type h2");
+var bingoBall = document.querySelector("section:first-of-type h3");
+var buttonNewBall = document.querySelector("section:first-of-type button");
 
 // Create array from the children of the previousnumbers ul
-var previousNumbers = Array.from(document.querySelector("section ul").children);
+var previousNumbers = Array.from(document.querySelector("section:first-of-type ul").children);
 
 // Create array from the children of the bingocards ul
 var cardUl = document.querySelector("aside ul");
@@ -87,6 +87,11 @@ function fillCard(card) {
     }
 }
 
+function addStamp() {
+    this.classList.toggle("stamp"); // Square that is clicked will toggle class on or off
+}
+
+
 // Generate a number between a min & max value
 function generateNumberBetween(min, max) {
     var randomNumber = Math.random(); // Generate number between 0 (inclusive) and 1 (not inclusive)
@@ -139,9 +144,6 @@ function generateBingoCard() {
     return columns;
 }
 
-function addStamp() {
-    this.classList.toggle("stamp"); // Square that is clicked will toggle class on or off
-}
 
 
 
