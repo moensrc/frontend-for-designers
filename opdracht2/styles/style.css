@@ -28,6 +28,7 @@ button, summary {
 	--color-bingo: #F72585;
 	--color-party: #4CC9F0;
 	--color-ball: #FFD000;
+	--color-highlight-ball: #FFF;
 	--color-shadow: #2B0F6A;
 
 	/* default button + states */
@@ -72,6 +73,8 @@ body {
 
   	color: var(--color-main-text);
   	background-color: var(--color-main-background);
+	  
+	user-select: none;
 }
 
 body,
@@ -127,29 +130,12 @@ h3 { /* bingo ball */
 	padding: .3em .4em;
 
 	font-size: 4em;
-	background-color: var(--color-ball);
+	background: radial-gradient(circle farthest-side at 15% 15%, var(--color-highlight-ball), var(--color-ball));
 	border-radius: 100%;
 
 	/* places */
 	transform: translateX(calc(-100% - 8em));
 }
-
-/* h3::before {
-	content: ''; 
-
-	position: absolute;
-	z-index: -1; 
-	bottom: -.25em;
-	left: 0;
-	right: 0;
-
-	width: 2em;
-	height: .6em;
-	border-radius: 100%;
-	background-color: var(--color-shadow);
-
-	transition: .1s;
-} */
 
 p {
 	margin: 0;
@@ -290,9 +276,15 @@ aside h2 {
 	margin: .75em;
 } 
 
+aside p.hide,
+aside button.hide {
+	display: none;
+}
+
 aside button {
 	font-size: 1em;
 }
+
 
 
 /* TABLES IN LIST (BINGO CARDS) */
@@ -304,14 +296,6 @@ aside ul {
 	flex-wrap: wrap;
 }
 
-aside ul li {
-	/* bingo card is by default invisible */
-	display: none;
-}
-
-aside ul li.show {
-	display: block;
-}
 
 table,
 tr,
