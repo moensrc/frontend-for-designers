@@ -159,7 +159,7 @@ met een before en after. Het probleem bij de eerste optie was dat de animatie ni
 
 ## Opdracht 2 test
 
-<details>
+<details open>
   <summary>uitwerken na testen (week 6/7)</summary>
 
   Neem minimaal 5 bevindingen op:
@@ -209,7 +209,7 @@ met een before en after. Het probleem bij de eerste optie was dat de animatie ni
 
 ## Opdracht 2 reflectie
 
-<details>
+<details open>
   <summary>uitwerken bij afronden opdracht (voor week 8)</summary>
 
   ### Je uitkomst - karakteristiek screenshot(s):
