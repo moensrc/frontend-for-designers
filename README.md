@@ -53,6 +53,9 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   19. Reading: HTML/CSS/JS Generate Bingo cards (CodePen) https://codepen.io/FookingPrawns/details/wvGbLX
   20. JS Do While loop (w3schools) https://www.w3schools.com/js/js_loop_while.asp
   21. HTML Template tag, to duplicate (w3schools) https://www.w3schools.com/tags/tag_template.asp
+  22. CSS Media queries for landscape mobile (StackOverflow) https://stackoverflow.com/questions/8956599/css-media-queries
+  23. JS API Web Speech (Mozilla) https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API
+  24. 
 
 
 ## Opdracht 1 plan
@@ -180,7 +183,26 @@ met een before en after. Het probleem bij de eerste optie was dat de animatie ni
 
 
   ### Bevinding 3:
-  ...
+  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+
+  #### oplossing:
+  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+ 
+ 
+ 
+  ### Bevinding 4:
+  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+
+  #### oplossing:
+  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+ 
+ 
+ 
+  ### Bevinding 5:
+  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+
+  #### oplossing:
+  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
 </details>
 
 
