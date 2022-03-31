@@ -14,14 +14,68 @@ var cardUl = document.querySelector("aside ul");
 
 var myCardsTab = document.querySelector("aside");
 var myCardsTitle = document.querySelector("aside h2");
-var cardInstruction = document.querySelector("p");
+var cardInstruction = document.querySelector("aside p");
 var buttonAddCard = document.querySelector("aside button");
 
 // Global array will store all previously rolled numbers
 var numbersArr = [];
 
-// Selecting all bingo number squares with querySelectorAll
-var squares = document.querySelectorAll("table tr td");
+
+
+
+
+// NUMBERBALL FUNCTIONS
+// SECTION 
+
+// Click on button to generate new bingo number ball
+buttonNewBall.addEventListener("click", updateBall, false);
+
+// Generating random number for number ball
+function newBall() {
+    var randomNumber = generateNumberBetween(1, 75);
+    
+    // Check in numbersArr for duplicate: if it includes it, call function again
+    if (numbersArr.includes(randomNumber)) {
+        return newBall();
+    }
+    // Push randomNumber into Array
+    numbersArr.push(randomNumber);
+    // Return the right number that isn't a duplicate
+    return randomNumber;
+}
+
+// Function updateBall makes function newBall generate an unique number between 1-75
+function updateBall() {
+    // Remove & add class '.roll' so every new click resets CSS animation
+    bingoBall.classList.remove("roll");
+    bingoBall.offsetWidth; // This is a hack.. I've tried conditional statements & different orders
+    bingoBall.classList.add("roll");
+
+    bingoBall.textContent = newBall(); // Textcontent is updated with returned random number
+   
+    updateBallList() // Every time we update the ball, ballList of previous numbers is updated
+}
+
+function updateBallList() {
+    // For loop runs previousNumbers.length times, updates numbers from last to fifth-last, if you add n amount of li's in html, function will run n amount of times.
+    for (var i = 0; i < previousNumbers.length; i++) {
+        var liElement = previousNumbers[i]; // Select individual li element(s) from array
+
+        var numberRolled = numbersArr[numbersArr.length - (1 + i)]; // Length - (1 + i) because we want the most recent one after the second-, third-, etc. last
+
+        liElement.textContent = numberRolled; // Update balls with the numberRolled relevant to the array
+
+        // Conditional statement: if li has no content, add class .hide
+        if (numberRolled === undefined) {
+            liElement.classList.add("hide");
+        } else {
+            liElement.classList.remove("hide");
+            instructionText.textContent = "Rol een nieuw balletje!";
+        } 
+    }
+}
+
+updateBallList() // Call function updateBallList once on reload, so it hides li ballList by default
 
 
 
@@ -41,8 +95,10 @@ function showMyCardsTab() {
     sectionNumbers.classList.toggle("moveUp");
 }
 
+
 // Click on button to add bingo card
 buttonAddCard.addEventListener("click", addCard, false);
+
 
 // Add bingocard to list in aside
 function addCard() {
@@ -50,17 +106,20 @@ function addCard() {
     var cardTemplate = document.querySelector("template"); 
     // Use cloneNode to clone template of li HTML
     var card = cardTemplate.content.cloneNode(true);
-    fillCard(card); // Run function to fill card with numbers
-    cardUl.appendChild(card); // Add list item template
 
-    // Remove text that says you dont have cards
+    fillCard(card); // Run function to fill card with numbers
+
+    cardUl.appendChild(card); // Add list item template to ul
+
+    // Remove text that says you dont have cards with class
     cardInstruction.classList.add("hide");
 
-    // Set max. cards to 4. If max is reached, hide add button
+    // Set max. cards to 4. If max is reached, hide add button with class
     if (cardUl.children.length == 5) {
         buttonAddCard.classList.add("hide");
     }
 }
+
 
 // Fill HTML table with numbers from generateBingoCard()
 function fillCard(card) {
@@ -69,10 +128,10 @@ function fillCard(card) {
 
     // For loop runs 5 times: for each column of the card
     for (var i = 0; i < 5; i++) {
-        // Select columns from card by using selector :nth-of-type(i+1), because nth-of-type starts at value 1
+        // Select columns from card by using selector :nth-of-type(i+1), because nth-of-type starts at value 1 (Column number equals i+1)
         var column = card.querySelectorAll("tr td:nth-of-type(" + (i + 1) + ")" )
         
-        // For loop runs 5 times: for each square of each column
+        // For loop runs 5 times: for each 5 squares of each column
         for (var j = 0; j < 5; j++) {
             var square = column[j];
 
@@ -83,12 +142,17 @@ function fillCard(card) {
 
             // Add eventlistener to squares to addStamp()
             square.addEventListener("click", addStamp, false);
+
         }
     }
 }
 
+
 function addStamp() {
     this.classList.toggle("stamp"); // Square that is clicked will toggle class on or off
+
+    // Whenever user adds stamp, listen for Bingo!
+    listen();
 }
 
 
@@ -141,64 +205,66 @@ function generateBingoCard() {
         // Fill columns array with column
         columns[i] = column;
     }
+    // console.log(columns);
     return columns;
 }
 
 
 
 
-// NUMBERBALL FUNCTIONS
-// SECTION 
 
-// Click on button to generate new bingo number ball
-buttonNewBall.addEventListener("click", updateBall, false);
+// BINGO CONFETTI
+// SECTION
 
-// Generating random number for number ball
-function newBall() {
-    var randomNumber = generateNumberBetween(1, 75);
-    
-    // Check in numbersArr for duplicate: if it includes it, call function again
-    if (numbersArr.includes(randomNumber)) {
-        return newBall();
-    }
-    // Push randomNumber into Array
-    numbersArr.push(randomNumber);
-    // Return the right number that isn't a duplicate
-    return randomNumber;
+
+// Function listen for BINGO!
+/* https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API */
+
+// for Chrome
+var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
+var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
+
+// Commands for speech
+var commandos = ["bingo"];
+// Specify version
+var grammar = '#JSGF V1.0; grammar commandos; public <commando> = ' + commandos.join(' | ') + ' ;'
+
+// Define speech recognition instance 
+var recognition = new SpeechRecognition();
+var speechRecognitionList = new SpeechGrammarList();
+
+/* het luisterobject de commando's leren */
+speechRecognitionList.addFromString(grammar, 1);
+recognition.grammars = speechRecognitionList;
+recognition.continuous = true;
+recognition.lang = 'nl';
+recognition.interimResults = true;
+recognition.maxAlternatives = 1;
+
+/* als er een commando uitgesproken is */
+function handleSpeech(event) {
+  var confettiScreen = document.querySelector("section:nth-of-type(2)");
+  var last = event.results.length - 1;
+  var commando = event.results[last][0].transcript;
+//   console.log('Result received: ' + commando + '. ' + 'Confidence: ' + event.results[0][0].confidence);
+
+// If the command == Bingo, add confetti
+  if (commando.trim() == "bingo") {
+    confettiScreen.classList.add("confetti");
+  } 
 }
 
-// Function updateBall makes function newBall generate an unique number between 1-75
-function updateBall() {
-    // Remove & add class '.roll' so every new click resets CSS animation
-    bingoBall.classList.remove("roll");
-    bingoBall.offsetWidth; // This is a hack.. I've tried conditional statements & different orders
-    bingoBall.classList.add("roll");
-
-    bingoBall.textContent = newBall(); // Textcontent is updated with returned random number
-   
-    updateBallList() // Every time we update the ball, ballList of previous numbers is updated
+function listen(){
+   recognition.start();
+//    console.log('Ready to receive a command.');
 }
 
-function updateBallList() {
-    // For loop runs previousNumbers.length times, updates numbers from last to fifth-last
-    for (var i = 0; i < previousNumbers.length; i++) {
-        var liElement = previousNumbers[i]; // Select individual li element(s)
-
-        var numberRolled = numbersArr[numbersArr.length - (1 + i)]; // length - (1 + i) because we want the most recent one after the second-, third-, etc. last
-
-        liElement.textContent = numberRolled; // update balls with the numberRolled relevant to the array
-        
-        // Conditional statement: if li has no content, add class .hide
-        if (numberRolled === undefined) {
-            liElement.classList.add("hide");
-            // instructionText.textContent = "Rol je eerste balletje!";
-        } else {
-            liElement.classList.remove("hide");
-            // instructionText.textContent = "Rol een nieuw balletje!";
-        }
-       
-    }
+recognition.onresult = function(event) {
+   handleSpeech(event);
 }
 
-updateBallList() // Call function updateBallList once on reload, so it hides li ballList
+recognition.onend = function() {
+   listen();
+}
 

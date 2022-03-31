@@ -155,7 +155,7 @@ button {
 	height: auto;
 	margin: .6em;
 	padding: .5em;
-	margin: 1em 0 2em 0;
+	margin: 1em 0 1em 0;
 
 	font-size: 1.2em;
 
@@ -207,14 +207,13 @@ section:first-of-type {
 }
 
 section:first-of-type.moveUp {
-	transform: translateY(-87%);
+	transform: translateY(-87.5%);
 }
 
 section:first-of-type ul {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-
 }
 
 section:first-of-type ul li {
@@ -246,6 +245,7 @@ section:first-of-type ul li:first-of-type {
 
 
 
+
 /*  Two elements: Element 2  */
 /* ASIDE: list of bingocards */
 aside {
@@ -259,34 +259,36 @@ aside {
 	top: 0;
 	bottom: 0;
 	right: 0;
-	z-index: 2; /* places above all visible content */
+	z-index: 2; /* places aside above all visible content */
 
 	transform: translateY(80%); /* moves aside 80% down (partly out of viewport) */
 	transition: .25s; /* transition for opening menu */
 
 	background-color: var(--color-mycards-background);
-
-	
 }
 
-aside.showList { /* will push aside upwards when JS event */
+aside.showList { /* Will push aside upwards with JS event */
 	overflow-y: scroll;
 	transform: translateY(10%); /* Overflow scroll does not show button when its open, due to the transform not being 0%, what to do? */
 }
 
 aside h2 {
-	margin: .75em;
+	margin: .5em;
 } 
+
+aside p {
+	margin: 0  0 1em 0;
+}
+
+aside button {
+	font-size: 1em;
+	margin: 0;
+}
 
 aside p.hide,
 aside button.hide {
 	display: none;
 }
-
-aside button {
-	font-size: 1em;
-}
-
 
 
 /* TABLES IN LIST (BINGO CARDS) */
@@ -297,7 +299,6 @@ aside ul {
 	align-items: center;
 	flex-wrap: wrap;
 }
-
 
 table,
 tr,
@@ -322,7 +323,6 @@ table {
 
 	background-color: var(--color-bingo-card-background);
 	color: var(--color-bingo-card-text);
-
 }
 
 table tr {
@@ -342,7 +342,11 @@ table tr td {
 table tr td {
 	cursor: pointer;
 
-	transition: .2s; /* transition helps stamp to fade in */
+	transition: .2s; /* transition helps stamp class to fade in */
+}
+
+table tr td:focus {
+	border: 3px solid red;
 }
 
 table tr td:hover {
@@ -356,7 +360,7 @@ table tr td.stamp { /* this class is added with JS when clicked */
 }
 
 /* Third element: will display after user says BINGO */
-/* SECTION for BINGOPARTY! */
+/* SECTION for BINGOPARTY CONFETTI! */
 section:nth-of-type(2) {
 	display: flex;
 	flex-direction: column;
@@ -381,6 +385,7 @@ section:nth-of-type(2) {
 
 
 
+
 /**************/
 /* ANIMATIONS */
 /**************/
@@ -397,7 +402,6 @@ section:nth-of-type(2).confetti {
 }
 
 /* KEYFRAMES */
-
 @keyframes roll-ball-in {
 	0% {
 		transform: translateX(calc(-100% - 8em)) rotate(0deg) scale(1.5);
@@ -413,15 +417,6 @@ section:nth-of-type(2).confetti {
 	}
 }
 
-
-/* @keyframes roll-ball-out {
-	0% {
-		transform: translateX(0%) rotate(360deg) scale(1);
-	}
-	100% {
-		transform: translateX(calc(-100% - 8em))  rotate(0deg) scale(1);
-	}
-} */
 
 @keyframes scroll-confetti {
 	0% {
@@ -439,7 +434,7 @@ section:nth-of-type(2).confetti {
 /****************/
 /* MEDIA QUERIES*/
 /****************/
-@media only screen and (min-width: 550px) {
+@media only screen and (min-width: 500px) {
 	body {
 		flex-direction: row;	
 		justify-content: flex-start;
@@ -471,9 +466,9 @@ section:nth-of-type(2).confetti {
 		bottom: initial;
 		left: initial;
 		right: initial;
-
-		transform: translateY(0%);
+		
 		overflow-y: scroll;
+		transform: translateY(0%);
 	}
 
 	aside.showList {
@@ -484,6 +479,18 @@ section:nth-of-type(2).confetti {
 }
 
 /* when user prefers reduced motion */
-/* @media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
+	h3 {
+		transform: translateX(0);
+	}
 
-} */
+	h3.roll {
+		animation: none;
+	}
+
+	section:first-of-type,
+	aside {
+		transition: none;
+	}
+
+}
