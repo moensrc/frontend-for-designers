@@ -164,45 +164,54 @@ met een before en after. Het probleem bij de eerste optie was dat de animatie ni
 
   Neem minimaal 5 bevindingen op:
 
-
-
   ### Bevinding 1:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
-
+  <img src="readme-images/screenshot-1.jpg" width="40%" alt="bevinding 1">
+  De onderste sectie (aside) leek meer alsof hij geswiped moet worden, en niet op geklikt. Hierdoor moest ik vervolgens instructie geven om er op te tappen.
+ 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
-
+  <img src="readme-images/oplossing-1.jpg" width="40%" alt="oplossing 1">
+  In de JS heb ik een event toegevoegd die luistert naar een swipe-up en swipe-down met een JS swipe-event library. Ik heb de tap er wel in gelaten, aangezien de gebruiker er ook op zou mogen klikken. Swipen voelt natuurlijker maar een tap moet er altijd inzitten voor toegankelijkheid.
 
 
   ### Bevinding 2:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  <img src="readme-images/screenshot-2.jpg" width="40%" alt="bevinding 2">
+  Wanneer de aside naar boven is geschoven, is de onderste bingokaart (als er 2 of meer kaarten toegevoegd worden) niet goed zichtbaar in beeld. De onderste rij van de table zit buiten het scherm.
 
   #### oplossing:
+  <img src="readme-images/oplossing-2.jpg" width="40%" alt="oplossing 2">
+  Ik wist eerst helemaal niet hoe ik dit zou moeten oplossen. De reden dat dit gebeurt, is omdat de aside met 'transform: translateY' omhoog wordt gezet tot 10%. Als ik deze aanpas tot 0%, is de bingokaart wel volledig in beeld in de aside. Het ligt dus aan die transform, ondanks dat er een 'overflow: scroll' op de aside zit. 
+  Ik heb het uiteindelijk op kunnen lossen door
   Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
-
 
 
   ### Bevinding 3:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  <img src="readme-images/screenshot-3.jpg" width="40%" alt="bevinding 3">
+  De 'Voeg toe' button om bingokaarten toe te voegen wordt erg gemakkelijk aangetapt als de aside wordt aangeklikt om te sluiten, maar vooral om te openen. 
 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+  <img src="readme-images/oplossing-3.jpg" width="40%" alt="oplossing 3">
+  Ik heb besloten de positie van de button niet aan te passen, maar deze simpelweg kleiner te maken op mobile. Als de button bijvoorbeeld onderaan de kaarten staat, is deze met een scroll te bereiken en anders direct in de aside.
  
  
  
   ### Bevinding 4:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  <img src="readme-images/screenshot-4.jpg" width="40%" alt="bevinding 4">
+  De toestemming voor microfoon komt al in beeld als je een stempel zet, en is dus erg vervelend (hij luistert dus altijd). Op mobile neemt hij bovendien veel ruimte in in het scherm.
 
   #### oplossing:
+  <img src="readme-images/oplossing-4.jpg" width="40%" alt="oplossing 4">
+  Hoe oplossen? Weet ik nog niet..
   Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
  
  
  
   ### Bevinding 5:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+ <img src="readme-images/screenshot-5.jpg" width="40%" alt="bevinding 5">
+  De tekst in het grote balletje is niet heel goed zichtbaar en valt weg door de shading op de bal. (Vooral brede getallen)
 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+  <img src="readme-images/oplossing-5.jpg" width="40%" alt="oplossing 5">
+  Ik heb de tekstkleur van het balletje veranderd. In de Darkmode ga ik het balletje een andere kleur geven, dus dan kan de tekst hoogstwaarschijnlijk wel een witte kleur hebben.
 </details>
 
 
