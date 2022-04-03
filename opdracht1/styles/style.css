@@ -21,7 +21,7 @@
 
 
 
-
+ 
 /**************/
 /* CSS REMEDY */
 /**************/
@@ -42,9 +42,9 @@ button, summary {
 /*********************/
 :root {
 	/* lego: set colors for individual blocks */
-	--color-lego-text:#111; /* text color */
-	--color-lego-background:rgb(253, 224, 224); /* background color */
-	--color-lego-text-border: #FFF; /* text border (text-shadow) */
+	--color-lego-text:#111111; /* text color */
+	--color-lego-background:#FDE0E0; /* background color */
+	--color-lego-text-border: #FFFFFF; /* text border (text-shadow) */
 	
 	--color-l-block: #EF476F;
 	--color-e-block: #FFD166;
@@ -52,7 +52,7 @@ button, summary {
 	--color-o-block: #229EC7;
 
 	/* google: set colors for letters */
-	--color-google-background: #FFF;
+	--color-google-background: #FFFFFF;
 
 	--color-letter-g: #3399FE;
 	--color-letter-o1-e: #FE0000;
@@ -65,8 +65,8 @@ button, summary {
 @media (prefers-color-scheme: dark) {
 	:root {
 		/* lego: set colors for individual blocks */
-		--color-lego-background: rgb(0, 2, 35);
-		--color-lego-text-border: #eee;
+		--color-lego-background: #000223;
+		--color-lego-text-border: #EEEEEE;
 
 		--color-l-block: #FA3664;
 		--color-e-block: #F8C755;
@@ -74,13 +74,7 @@ button, summary {
 		--color-o-block: #157FA2;
 
 		/* google: set colors for letters */
-		--color-google-background: rgb(86, 86, 86);
-
-		--color-letter-g: #3399FE;
-		--color-letter-o1-e: #FE0000;
-		--color-letter-o2: #FFC000;
-		--color-letter-l: #00AF50;
-
+		--color-google-background: #565656;
 	}
 }
 
@@ -103,9 +97,8 @@ body {
 }
 
 section {
-	width: 100vw;
-	height: 50vh;
-
+	width: 100%;
+	flex-basis: 50%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -135,32 +128,6 @@ section:first-of-type h1 {
 	text-shadow: .05em .05em var(--color-lego-text-border), -.05em -.05em var(--color-lego-text-border), .05em -.05em var(--color-lego-text-border), -.05em .05em var(--color-lego-text-border);
 }
 
-/* h1::before {
-	content: 'play';
-
-	position: absolute; 
-	top: 6em;
-	right: 0;
-
-	cursor: pointer;
-
-	background: var(--color-button);
-	border-radius: 20%;
-
-	padding: .5em .6em .5em .5em;
-	margin: .5em;
-
-	font-size: 1em;
-
-	box-shadow: 4px 6px 14px 6px var(--color-button-shadow);
-}
-
-h1:hover::before {
-	background: var(--color-button-hover);
-	box-shadow: 4px 6px 14px 6px var(--color-button-shadow-hover);
-} */
-
-
 section:first-of-type h1 span {
 	position: absolute; 
 
@@ -170,11 +137,11 @@ section:first-of-type h1 span {
 }
 
 /* before and after pseudoelements create top squares on blocks */
-section:first-of-type h1 span::before {
+section:first-of-type h1 span::before,
+section:first-of-type h1 span::after {
 	content: ''; /* include for the shape to show up */
 
 	position: absolute; 
-	top: .25em;
 	right: -.25em;
 	width: .5em;
 	height: .5em;
@@ -183,17 +150,12 @@ section:first-of-type h1 span::before {
 	border-radius: 10%; /* round off corners */
 }
 
-section:first-of-type h1 span::after {
-	content: ''; /* include for the shape to show up */
+section:first-of-type h1 span::before {
+	top: .25em;
+}
 
-	position: absolute;
+section:first-of-type h1 span::after {
 	bottom: .25em;
-	right: -.25em;
-	width: .5em;
-	height: .5em;
-	
-	background: var(--color-text);
-	border-radius: 10%;
 }
 
 section:first-of-type h1 span:first-of-type {
@@ -313,7 +275,7 @@ section:nth-of-type(2) h1 span:nth-of-type(2)::after {
 
 	background: var(--color-letter-o1-e);
 
-	/* opacity: 0; /* make invisible so it can appear in animation */
+	opacity: 0; /* make invisible so it can appear in animation */
 }
 
 
@@ -595,8 +557,8 @@ section:nth-of-type(2):hover span:nth-of-type(2) {
 	move-magnifier-back 1.5s 1 3.2s ease-in-out forwards;
 }
 
-/* section:nth-of-type(2):hover span:nth-of-type(2)::before {
-	animation: fade-in .2s 1 ease-in forwards;
+section:nth-of-type(2):hover span:nth-of-type(2)::after {
+	animation: fade-in .25s 1 ease-in forwards;
 }
 
 @keyframes fade-in {
@@ -606,7 +568,7 @@ section:nth-of-type(2):hover span:nth-of-type(2) {
 	100% {
 		opacity: 1;
 	}
-} */
+}
 
 /* KEYFRAMES GOOGLE ANIMATION (step by step) */
 
@@ -684,8 +646,8 @@ section:nth-of-type(2):hover span:nth-of-type(2) {
 		justify-content: space-evenly;
 	}
 
-	section { /* reverse sizing */
-		width: 50vw;
-		height: 100vh;
+	section { 
+		width: unset;
+		height: 100%;
 	}
 }
