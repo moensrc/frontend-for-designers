@@ -114,6 +114,7 @@ function addCard() {
     // Remove text that says you dont have cards with class
     cardInstruction.classList.add("hide");
 
+    myCardsTitle.textContent = "Mijn Bingokaarten (" + (cardUl.children.length - 1) + ")";
     // Set max. cards to 4. If max is reached, hide add button with class
     if (cardUl.children.length == 5) {
         buttonAddCard.classList.add("hide");
@@ -151,7 +152,7 @@ function fillCard(card) {
 function addStamp() {
     this.classList.toggle("stamp"); // Square that is clicked will toggle class on or off
 
-    // Whenever user adds stamp, listen for Bingo!
+    // Whenever user adds stamp, listen for Bingo! (Could be in a different spot maybe?)
     listen();
 }
 
@@ -217,7 +218,7 @@ function generateBingoCard() {
 // SECTION
 
 
-// Function listen for BINGO!
+// Functions to listen for BINGO!
 /* https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API */
 
 // for Chrome
@@ -227,22 +228,20 @@ var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEv
 
 // Commands for speech
 var commandos = ["bingo"];
-// Specify version
 var grammar = '#JSGF V1.0; grammar commandos; public <commando> = ' + commandos.join(' | ') + ' ;'
 
 // Define speech recognition instance 
 var recognition = new SpeechRecognition();
 var speechRecognitionList = new SpeechGrammarList();
 
-/* het luisterobject de commando's leren */
 speechRecognitionList.addFromString(grammar, 1);
 recognition.grammars = speechRecognitionList;
 recognition.continuous = true;
-recognition.lang = 'nl';
+recognition.lang = 'en';
 recognition.interimResults = true;
 recognition.maxAlternatives = 1;
 
-/* als er een commando uitgesproken is */
+// Handle command
 function handleSpeech(event) {
   var confettiScreen = document.querySelector("section:nth-of-type(2)");
   var last = event.results.length - 1;
@@ -257,14 +256,9 @@ function handleSpeech(event) {
 
 function listen(){
    recognition.start();
-//    console.log('Ready to receive a command.');
+   console.log('Ready to receive a command.');
 }
 
 recognition.onresult = function(event) {
    handleSpeech(event);
 }
-
-recognition.onend = function() {
-   listen();
-}
-

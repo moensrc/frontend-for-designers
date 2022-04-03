@@ -28,6 +28,7 @@ button, summary {
 	--color-bingo: #F72585;
 	--color-party: #4CC9F0;
 	--color-ball: #FFD000;
+	--color-ball-text: #3A0CA3;
 	--color-highlight-ball: #FFF;
 	--color-shadow: #2B0F6A;
 
@@ -40,11 +41,11 @@ button, summary {
 	--color-button-hover-border: #F72585;
 	--color-button-hover-shadow: #F72585;
 	
-	/* --color-button-focus: #FFF;
-	--color-button-focus-border: #F72585;
-	--color-button-focus-shadow: #F72585;
+	--color-button-focus: #4CC9F0;
+	--color-button-focus-border: #FFF;
+	--color-button-focus-shadow: #FFF;
 
-	--color-button-text-active: #2B0F6A; */
+	--color-button-active: #F72585;
 
 
 	/* bingo card */
@@ -55,7 +56,19 @@ button, summary {
 	--color-bingo-card-header: #F72585;
 }
 
-
+@media (prefers-color-scheme: dark) {
+	:root {
+		/* default text & background */
+		--color-mycards-background:#2B0F6A;
+	
+		/* decorative colors */
+		--color-ball: #FFD000;
+		--color-highlight-ball: #FFF;
+	
+		/* bingo card */
+		--color-bingo-card-background: #8865da;
+	}
+}
 
 
 
@@ -132,6 +145,7 @@ h3 { /* bingo ball */
 	padding: .3em .4em;
 
 	font-size: 4em;
+	color: var(--color-ball-text);
 	background: radial-gradient(circle farthest-side at 15% 15%, var(--color-highlight-ball), var(--color-ball));
 	border-radius: 100%;
 
@@ -177,7 +191,7 @@ button:hover {
 	box-shadow: 0 .2em var(--color-button-hover-shadow);
 }
 
-/* button:focus,
+button:focus,
 button:active {
 	outline: none;
 	
@@ -189,9 +203,8 @@ button:active {
 }
 
 button:active {
-	color: var(--color-button-text-active);
-} */
-
+	background-color: var(--color-button-active);
+}
 
 
 /* Two elements: Element 1 */
@@ -406,10 +419,10 @@ section:nth-of-type(2).confetti {
 	0% {
 		transform: translateX(calc(-100% - 8em)) rotate(0deg) scale(1.5);
 	}
-	75% {
+	55% {
 		transform: translateX(0%) rotate(360deg) scale(1);
 	}
-	85% {
+	65% {
 		transform: translateX(0%) rotate(360deg) scale(1.25);
 	}
 	100% {
@@ -478,8 +491,21 @@ section:nth-of-type(2).confetti {
 
 }
 
-/* when user prefers reduced motion */
+@media only screen and (min-width: 1440px) {
+	body {
+		justify-content: center;
+		align-items: center;
+	}
+
+	h1 {
+		margin: .3em;
+	}
+
+}
+
+/* When user prefers reduced motion */
 @media (prefers-reduced-motion: reduce) {
+	/* Reset all styling for animations */
 	h3 {
 		transform: translateX(0);
 	}
