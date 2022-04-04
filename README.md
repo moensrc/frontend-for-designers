@@ -161,55 +161,51 @@ met een before en after. Het probleem bij de eerste optie was dat de animatie ni
 
 <details open>
   <summary>uitwerken na testen (week 6/7)</summary>
-  <img src="readme-images/bingo-test.png" width="40%" alt="desktop versie">
+  <img src="readme-images/bingo-test.png" width="40%" alt="desktop versie"> </br>
  
  
-  ### Bevinding 1:
-  <img src="readme-images/screenshot-1.jpg" width="40%" alt="bevinding 1">
-  De onderste sectie (aside) leek meer alsof hij geswiped moet worden, en niet op geklikt. Hierdoor moest ik vervolgens instructie geven om er op te tappen.
+  ### Bevinding 1: De onderste sectie (aside) leek meer alsof hij geswiped moet worden, en niet op geklikt. Hierdoor moest ik vervolgens instructie geven om er op te tappen.
+   <img src="readme-images/screenshot-1.jpg" width="25%" alt="bevinding 1">
+
  
   #### oplossing:
+  In de JS heb ik een event toegevoegd die luistert naar een swipe-up en swipe-down met een JS swipe-event library. Ik heb de tap er wel in gelaten, aangezien de gebruiker er ook op zou mogen klikken. Swipen voelt natuurlijker maar een tap moet er altijd inzitten voor toegankelijkheid. </br>
   <img src="readme-images/oplossing1.png" width="40%" alt="oplossing 1">
-  In de JS heb ik een event toegevoegd die luistert naar een swipe-up en swipe-down met een JS swipe-event library. Ik heb de tap er wel in gelaten, aangezien de gebruiker er ook op zou mogen klikken. Swipen voelt natuurlijker maar een tap moet er altijd inzitten voor toegankelijkheid.
 
 
-  ### Bevinding 2:
-  <img src="readme-images/screenshot-2.jpg" width="40%" alt="bevinding 2">
-  Wanneer de aside naar boven is geschoven, is de onderste bingokaart (als er 2 of meer kaarten toegevoegd worden) niet goed zichtbaar in beeld. De onderste rij van de table zit buiten het scherm.
+  ### Bevinding 2: Wanneer de aside naar boven is geschoven, is de onderste bingokaart (als er 2 of meer kaarten toegevoegd worden) niet goed zichtbaar in beeld. De onderste rij van de table zit buiten het scherm.
+   <img src="readme-images/screenshot-2.jpg" width="25%" alt="bevinding 2">
 
   #### oplossing:
-  <img src="readme-images/oplossing2.png" width="40%" alt="oplossing 2">
   Ik wist eerst helemaal niet hoe ik dit zou moeten oplossen. De reden dat dit gebeurt, is omdat de aside met 'transform: translateY' omhoog wordt gezet tot 10%. Als ik deze aanpas tot 0%, is de bingokaart wel volledig in beeld in de aside. Het ligt dus aan die transform, ondanks dat er een 'overflow: scroll' op de aside zit. 
-  Ik heb het uiteindelijk op kunnen lossen door
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+  Ik heb het uiteindelijk op kunnen lossen door de aside een fixed height te geven van +- 90% (92%) om te compenseren voor de procenten die hij verliest in de transform. </br>
+   <img src="readme-images/oplossing2.png" width="40%" alt="oplossing 2">
 
 
-  ### Bevinding 3:
-  <img src="readme-images/screenshot-3.jpg" width="40%" alt="bevinding 3">
-  De 'Voeg toe' button om bingokaarten toe te voegen wordt erg gemakkelijk aangetapt als de aside wordt aangeklikt om te sluiten, maar vooral om te openen. 
+  ### Bevinding 3: De 'Voeg toe' button om bingokaarten toe te voegen wordt erg gemakkelijk aangetapt als de aside wordt aangeklikt om te sluiten, maar vooral om te openen. 
+  <img src="readme-images/screenshot-3.jpg" width="25%" alt="bevinding 3">
 
   #### oplossing:
+   Ik heb besloten de positie van de button niet aan te passen, maar deze simpelweg kleiner te maken op mobile. Als de button bijvoorbeeld onderaan de kaarten staat, is deze met een scroll te bereiken en anders direct in de aside. </br>
   <img src="readme-images/oplossing3.png" width="40%" alt="oplossing 3">
-  Ik heb besloten de positie van de button niet aan te passen, maar deze simpelweg kleiner te maken op mobile. Als de button bijvoorbeeld onderaan de kaarten staat, is deze met een scroll te bereiken en anders direct in de aside.
+
  
- 
-  ### Bevinding 4:
-  <img src="readme-images/screenshot-4.jpg" width="40%" alt="bevinding 4">
-  De toestemming voor microfoon komt al in beeld als je een stempel zet, en is dus erg vervelend (hij luistert dus altijd). Op mobile neemt hij bovendien veel ruimte in in het scherm.
+  ### Bevinding 4: De toestemming voor microfoon komt al in beeld als je een stempel zet, en is dus erg vervelend (hij luistert dus altijd). Op mobile neemt hij bovendien veel ruimte in in het scherm.
+   <img src="readme-images/screenshot-4.jpg" width="25%" alt="bevinding 4">
+
 
   #### oplossing:
-  Hoe oplossen? Weet ik nog niet.. 
+  Ik weet niet hoe ik dit kan oplossen, misschien is het niet zo zeer een groot probleem dat hij dan al komt, het is meer dat er altijd wordt geluisterd als er een stempel wordt gezet. Als het kan, zou het ideaal zijn om deze pas te initiëren als er 5 stempels in een rij/kolom zijn gezet. Daarvoor zou ik meer scripts moeten schrijven die het aantal stempels per rij/kolom opslaan en kunnen herkennen wanneer deze stempels in een rij/kolom van 5 staan.
  
  
-  ### Bevinding 5:
+  ### Bevinding 5: De tekst in het grote balletje is niet heel goed zichtbaar en valt weg door de shading op de bal. (Vooral brede getallen)
  <img src="readme-images/screenshot-5.jpg" width="40%" alt="bevinding 5">
-  De tekst in het grote balletje is niet heel goed zichtbaar en valt weg door de shading op de bal. (Vooral brede getallen)
 
   #### oplossing:
+   Ik heb de tekstkleur van het balletje veranderd. In de Darkmode ga ik het balletje een andere kleur geven, dus dan kan de tekst hoogstwaarschijnlijk wel een witte kleur hebben. </br>
   <img src="readme-images/oplossing5.1.png" width="40%" alt="oplossing 5">
   <img src="readme-images/oplossing5.png" width="40%" alt="oplossing 5"> 
 
-  Ik heb de tekstkleur van het balletje veranderd. In de Darkmode ga ik het balletje een andere kleur geven, dus dan kan de tekst hoogstwaarschijnlijk wel een witte kleur hebben.
 </details>
 
 
