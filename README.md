@@ -161,7 +161,9 @@ met een before en after. Het probleem bij de eerste optie was dat de animatie ni
 
 <details open>
   <summary>uitwerken na testen (week 6/7)</summary>
-
+  <img src="readme-images/bingo-test.png" width="40%" alt="desktop versie">
+ 
+ 
   ### Bevinding 1:
   <img src="readme-images/screenshot-1.png" width="40%" alt="bevinding 1">
   De onderste sectie (aside) leek meer alsof hij geswiped moet worden, en niet op geklikt. Hierdoor moest ik vervolgens instructie geven om er op te tappen.
@@ -204,8 +206,9 @@ met een before en after. Het probleem bij de eerste optie was dat de animatie ni
   De tekst in het grote balletje is niet heel goed zichtbaar en valt weg door de shading op de bal. (Vooral brede getallen)
 
   #### oplossing:
-  <img src="readme-images/oplossing5.png" width="40%" alt="oplossing 5"> 
   <img src="readme-images/oplossing5.1.png" width="40%" alt="oplossing 5">
+  <img src="readme-images/oplossing5.png" width="40%" alt="oplossing 5"> 
+
   Ik heb de tekstkleur van het balletje veranderd. In de Darkmode ga ik het balletje een andere kleur geven, dus dan kan de tekst hoogstwaarschijnlijk wel een witte kleur hebben.
 </details>
 
