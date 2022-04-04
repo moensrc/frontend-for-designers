@@ -208,18 +208,18 @@ met een before en after. Het probleem bij de eerste optie was dat de animatie ni
   <summary>uitwerken bij afronden opdracht (voor week 8)</summary>
 
   ### Je uitkomst - karakteristiek screenshot(s):
-  <img src="readme-images/desktop-1.png" width="40%" alt="uitkomst desktop opdracht 2">
-  <img src="readme-images/desktop-2.png" width="40%" alt="uitkomst desktop opdracht 2">
-  <img src="readme-images/desktop-3.png" width="40%" alt="uitkomst desktop opdracht 2">
-  <img src="readme-images/desktop-4.png" width="40%" alt="uitkomst desktop opdracht 2">
+  <img src="readme-images/desktop-1.png" width="46%" alt="uitkomst desktop opdracht 2">
+  <img src="readme-images/desktop-2.png" width="46%" alt="uitkomst desktop opdracht 2">
+  <img src="readme-images/desktop-3.png" width="46%" alt="uitkomst desktop opdracht 2">
+  <img src="readme-images/desktop-4.png" width="46%" alt="uitkomst desktop opdracht 2">
  
   <img src="readme-images/mobile-1.png" width="22%" alt="uitkomst mobile opdracht 2">
   <img src="readme-images/mobile-2.png" width="22%" alt="uitkomst mobile opdracht 2">
   <img src="readme-images/mobile-3.png" width="22%" alt="uitkomst mobile opdracht 2">
   <img src="readme-images/mobile-4.gif" width="22%" alt="uitkomst mobile opdracht 2">
  
-  <img src="readme-images/tablet-1.png" width="22%" alt="uitkomst tablet opdracht 2">
-  <img src="readme-images/tablet-2.gif" width="22%" alt="uitkomst tablet opdracht 2">
+  <img src="readme-images/tablet-1.png" width="36%" alt="uitkomst tablet opdracht 2">
+  <img src="readme-images/tablet-2.gif" width="25%" alt="uitkomst tablet opdracht 2">
  
  
 
