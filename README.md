@@ -165,7 +165,7 @@ met een before en after. Het probleem bij de eerste optie was dat de animatie ni
  
  
   ### Bevinding 1:
-  <img src="readme-images/screenshot-1.png" width="40%" alt="bevinding 1">
+  <img src="readme-images/screenshot-1.jpg" width="40%" alt="bevinding 1">
   De onderste sectie (aside) leek meer alsof hij geswiped moet worden, en niet op geklikt. Hierdoor moest ik vervolgens instructie geven om er op te tappen.
  
   #### oplossing:
@@ -174,7 +174,7 @@ met een before en after. Het probleem bij de eerste optie was dat de animatie ni
 
 
   ### Bevinding 2:
-  <img src="readme-images/screenshot-2.png" width="40%" alt="bevinding 2">
+  <img src="readme-images/screenshot-2.jpg" width="40%" alt="bevinding 2">
   Wanneer de aside naar boven is geschoven, is de onderste bingokaart (als er 2 of meer kaarten toegevoegd worden) niet goed zichtbaar in beeld. De onderste rij van de table zit buiten het scherm.
 
   #### oplossing:
@@ -185,7 +185,7 @@ met een before en after. Het probleem bij de eerste optie was dat de animatie ni
 
 
   ### Bevinding 3:
-  <img src="readme-images/screenshot-3.png" width="40%" alt="bevinding 3">
+  <img src="readme-images/screenshot-3.jpg" width="40%" alt="bevinding 3">
   De 'Voeg toe' button om bingokaarten toe te voegen wordt erg gemakkelijk aangetapt als de aside wordt aangeklikt om te sluiten, maar vooral om te openen. 
 
   #### oplossing:
@@ -194,7 +194,7 @@ met een before en after. Het probleem bij de eerste optie was dat de animatie ni
  
  
   ### Bevinding 4:
-  <img src="readme-images/screenshot-4.png" width="40%" alt="bevinding 4">
+  <img src="readme-images/screenshot-4.jpg" width="40%" alt="bevinding 4">
   De toestemming voor microfoon komt al in beeld als je een stempel zet, en is dus erg vervelend (hij luistert dus altijd). Op mobile neemt hij bovendien veel ruimte in in het scherm.
 
   #### oplossing:
@@ -202,7 +202,7 @@ met een before en after. Het probleem bij de eerste optie was dat de animatie ni
  
  
   ### Bevinding 5:
- <img src="readme-images/screenshot-5.png" width="40%" alt="bevinding 5">
+ <img src="readme-images/screenshot-5.jpg" width="40%" alt="bevinding 5">
   De tekst in het grote balletje is niet heel goed zichtbaar en valt weg door de shading op de bal. (Vooral brede getallen)
 
   #### oplossing:
