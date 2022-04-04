@@ -52,6 +52,8 @@ button, summary {
 	--color-bingo-card-text: #2B0F6A;
 	--color-bingo-card-stamp: #FFD000;
 	--color-bingo-card-stamp-hover: rgba(255, 208, 0, 0.2);
+	--color-bingo-card-focus: #89d9f2;
+	--color-bingo-card-border-focus: #FFD000;
 	--color-bingo-card-background: #FFF;
 	--color-bingo-card-header: #F72585;
 }
@@ -61,12 +63,9 @@ button, summary {
 		/* default text & background */
 		--color-mycards-background:#2B0F6A;
 	
-		/* decorative colors */
-		--color-ball: #FFD000;
-		--color-highlight-ball: #FFF;
-	
 		/* bingo card */
 		--color-bingo-card-background: #8865da;
+		--color-bingo-card-focus: #b299eb;
 	}
 }
 
@@ -169,7 +168,7 @@ button {
 	height: auto;
 	margin: .6em;
 	padding: .5em;
-	margin: 1em 0 1em 0;
+	margin: .5em 0 1em 0;
 
 	font-size: 1.2em;
 
@@ -207,6 +206,7 @@ button:active {
 }
 
 
+
 /* Two elements: Element 1 */
 /* SECTION with number ball */
 section:first-of-type {
@@ -219,10 +219,22 @@ section:first-of-type {
 	transition: .25s;
 }
 
+/* add class to section with JS events */
 section:first-of-type.moveUp {
 	transform: translateY(-87.5%);
 }
 
+section:first-of-type.moveUp h2 {
+	/* prevent h2 from wrapping, so on smallest mobile the ballullist does not budge  */
+	white-space: nowrap; 
+}
+
+section:first-of-type.moveUp ul {
+	/* scale down ul when aside moves up for better visibility  */
+	transform: scale(.8);
+}
+
+/* previous ball list */
 section:first-of-type ul {
 	display: flex;
 	flex-direction: row;
@@ -246,16 +258,15 @@ section:first-of-type ul li {
 }
 
 section:first-of-type ul li.hide {
-	display: none; /* display none makes first 5 li show 1 at a time, centering all */
+	/* display none makes first 5 li show 1 at a time, centering all , instead of visibility hidden */
+	display: none; 
 }
 
 section:first-of-type ul li:first-of-type {
+	/* most recent number ball is bigger */
 	transform: scale(1.3);
-
 	margin: .5em;
 }
-
-
 
 
 
@@ -280,9 +291,10 @@ aside {
 	background-color: var(--color-mycards-background);
 }
 
-aside.showList { /* Will push aside upwards with JS event */
+aside.showList { /* will push aside upwards with JS event */
+	height: 92%; /* compensating for transform, fixing overflow (that didn't scroll)*/
 	overflow-y: scroll;
-	transform: translateY(10%); /* Overflow scroll does not show button when its open, due to the transform not being 0%, what to do? */
+	transform: translateY(10%); /* moves up, but not fully taking the screen, so there's place for the ball list */
 }
 
 aside h2 {
@@ -294,7 +306,7 @@ aside p {
 }
 
 aside button {
-	font-size: 1em;
+	font-size: .8em;
 	margin: 0;
 }
 
@@ -302,7 +314,6 @@ aside p.hide,
 aside button.hide {
 	display: none;
 }
-
 
 /* TABLES IN LIST (BINGO CARDS) */
 aside ul {
@@ -359,7 +370,9 @@ table tr td {
 }
 
 table tr td:focus {
-	border: 3px solid red;
+	background-color: var(--color-bingo-card-focus);
+	outline: 5px solid var(--color-bingo-card-border-focus);
+	outline-offset: 2px;
 }
 
 table tr td:hover {
@@ -372,6 +385,8 @@ table tr td.stamp { /* this class is added with JS when clicked */
 	border-radius: 100%;
 }
 
+
+
 /* Third element: will display after user says BINGO */
 /* SECTION for BINGOPARTY CONFETTI! */
 section:nth-of-type(2) {
@@ -379,7 +394,6 @@ section:nth-of-type(2) {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-
 
 	position: absolute; 
 	z-index: 3; /* places above all content */
@@ -462,12 +476,21 @@ section:nth-of-type(2).confetti {
 		transform: translateY(0);
 	}
 
+	section:first-of-type.moveUp ul {
+		transform: unset;
+	}
+	
+	section:first-of-type.moveUp h2 {
+		white-space: unset;
+	}
+
 	h1 {
 		margin: .75em;
 	}
 
 	button {
 		margin: 2em 0 2em 0;
+		
 	}
 
 	aside {
@@ -486,8 +509,13 @@ section:nth-of-type(2).confetti {
 
 	aside.showList {
 		transform: translateY(0%);
+		height: 100vh;
 	}
 
+	aside button {
+		font-size: 1em;
+		margin: 0;
+	}
 
 }
 
@@ -501,6 +529,47 @@ section:nth-of-type(2).confetti {
 		margin: .3em;
 	}
 
+}
+
+@media only screen and (min-width: 2560px) {
+	h1 {
+		font-size: 4.25em;
+	}
+
+	h2 {
+		font-size: 3.5em;
+	}
+
+	h3 {
+		font-size: 6em;
+		transform: translateX(calc(-100% - 9em));
+	}
+
+	section button,
+	aside button {
+		font-size: 2em;
+	}
+
+	section ul li {
+		font-size: 2em;
+	}
+
+	aside p {
+		font-size: 2em;
+	}
+
+	aside table {
+		width: 25em;
+		height: 25em;
+	}
+
+	aside table th,
+	aside table td {
+		width: 5em;
+		height: 3.6em;
+
+		font-size: 1.3em;
+	}
 }
 
 /* When user prefers reduced motion */

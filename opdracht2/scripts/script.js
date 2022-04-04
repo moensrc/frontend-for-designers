@@ -17,6 +17,9 @@ var myCardsTitle = document.querySelector("aside h2");
 var cardInstruction = document.querySelector("aside p");
 var buttonAddCard = document.querySelector("aside button");
 
+// Setup for swipe-event library
+const { SwipeEventListener } = window.SwipeEventListener;
+
 // Global array will store all previously rolled numbers
 var numbersArr = [];
 
@@ -29,6 +32,8 @@ var numbersArr = [];
 
 // Click on button to generate new bingo number ball
 buttonNewBall.addEventListener("click", updateBall, false);
+// Or double click on bingo ball to generate new bingo number ball
+bingoBall.addEventListener("dblclick", updateBall, false);
 
 // Generating random number for number ball
 function newBall() {
@@ -85,20 +90,39 @@ updateBallList() // Call function updateBallList once on reload, so it hides li 
 // TAB / ASIDE
 
 // Click & swipe event for showing bingocards tab
-myCardsTitle.addEventListener("click", showMyCardsTab, false);
-// To do: Swipe event here
+myCardsTitle.addEventListener("click", toggleMyCardsTab, false);
+
+// Swipe-event Library https://www.npmjs.com/package/swipe-event-listener 
+const { swipeArea, updateOptions } = SwipeEventListener({
+    swipeArea: document.querySelector("aside")
+  });
+
+swipeArea.addEventListener("swipeUp", showMyCardsTab);
+swipeArea.addEventListener("swipeDown", hideMyCardsTab);
 
 
-function showMyCardsTab() {
+function toggleMyCardsTab() {
     // Show full list of bingocards in screen (move with class -> transform: translateY())
     myCardsTab.classList.toggle("showList");
     sectionNumbers.classList.toggle("moveUp");
 }
 
+// When swipe up in Aside
+function showMyCardsTab() {
+    myCardsTab.classList.add("showList");
+    sectionNumbers.classList.add("moveUp");
+}
+
+// When swipe down in Aside
+function hideMyCardsTab() {
+    myCardsTab.classList.remove("showList");
+    sectionNumbers.classList.remove("moveUp");
+}
+
+
 
 // Click on button to add bingo card
 buttonAddCard.addEventListener("click", addCard, false);
-
 
 // Add bingocard to list in aside
 function addCard() {
@@ -141,15 +165,21 @@ function fillCard(card) {
                 square.textContent = columns[i][j];
             }
 
-            // Add eventlistener to squares to addStamp()
-            square.addEventListener("click", addStamp, false);
+            // Add click eventlistener to squares to addStamp()
+            square.addEventListener("click", toggleStamp, false);    
 
+            // Add eventlistener for Enter key (with tabindex in html) squares to addStamp()
+            square.addEventListener("keydown", function (event) {
+                if (event.key === "Enter") {
+                    this.classList.toggle("stamp");
+                }
+            });
         }
     }
 }
 
 
-function addStamp() {
+function toggleStamp() {
     this.classList.toggle("stamp"); // Square that is clicked will toggle class on or off
 
     // Whenever user adds stamp, listen for Bingo! (Could be in a different spot maybe?)
@@ -216,8 +246,6 @@ function generateBingoCard() {
 
 // BINGO CONFETTI
 // SECTION
-
-
 // Functions to listen for BINGO!
 /* https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API */
 
