@@ -4,15 +4,6 @@
 **De opdrachten:** [opdracht 1](opdracht1/index.html) en [opdracht 2](opdracht2/index.html)
 
 
-<!-- Markdown is een simpele manier om HTML te schrijven.  
-Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
-
-Nb. De standaardstructuur en de spartaanse opmaak van de README.md zijn helemaal prima. Het gaat om de inhoud van je procesverslag. Besteedt de tijd voor pracht en praal aan je website.
-
-Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard open zetten. Fijn om dat steeds voor de relevante stuk(ken) te doen.
- -->
-
-
 ## Bronnenlijst
 ### Opdracht 1
   1. CSS Animations properties (w3schools) https://www.w3schools.com/css/css3_animations.asp
@@ -55,7 +46,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   21. HTML Template tag, to duplicate (w3schools) https://www.w3schools.com/tags/tag_template.asp
   22. CSS Media queries for landscape mobile (StackOverflow) https://stackoverflow.com/questions/8956599/css-media-queries
   23. JS API Web Speech (Mozilla) https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API
-  24. 
+  24. HTML Tab index (Mozilla) https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex?retiredLocale=nl
+  25. JS Keyboard navigation, tab index (Mozilla) https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets
 
 
 ## Opdracht 1 plan
@@ -216,8 +208,20 @@ met een before en after. Het probleem bij de eerste optie was dat de animatie ni
   <summary>uitwerken bij afronden opdracht (voor week 8)</summary>
 
   ### Je uitkomst - karakteristiek screenshot(s):
-  <img src="readme-images/dummy-plaatje.svg" width="375px" alt="uitkomst opdracht 2">
-
+  <img src="readme-images/desktop-1.png" width="40%" alt="uitkomst desktop opdracht 2">
+  <img src="readme-images/desktop-2.png" width="40%" alt="uitkomst desktop opdracht 2">
+  <img src="readme-images/desktop-3.png" width="40%" alt="uitkomst desktop opdracht 2">
+  <img src="readme-images/desktop-4.png" width="40%" alt="uitkomst desktop opdracht 2">
+ 
+  <img src="readme-images/mobile-1.png" width="22%" alt="uitkomst mobile opdracht 2">
+  <img src="readme-images/mobile-2.png" width="22%" alt="uitkomst mobile opdracht 2">
+  <img src="readme-images/mobile-3.png" width="22%" alt="uitkomst mobile opdracht 2">
+  <img src="readme-images/mobile-4.gif" width="22%" alt="uitkomst mobile opdracht 2">
+ 
+  <img src="readme-images/tablet-1.png" width="22%" alt="uitkomst tablet opdracht 2">
+  <img src="readme-images/tablet-2.gif" width="22%" alt="uitkomst tablet opdracht 2">
+ 
+ 
 
   ### Dit ging goed/Heb ik geleerd: 
   Korte omschrijving met plaatje(s)
