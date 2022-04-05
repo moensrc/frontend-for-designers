@@ -225,21 +225,26 @@ met een before en after. Het probleem bij de eerste optie was dat de animatie ni
   ### Dit ging goed/Heb ik geleerd: 
   - Met meerdere functies een bingokaart genereren en displayen. Dit was enorm uitdagend om te doen en vooral ook lastig om simpele voorbeelden van te vinden hoe anderen dit aan hebben gepakt. Ik heb uiteindelijk de stappen die nodig waren opgeschreven en vanaf dat punt de functies in het script geschreven. Ten eerste worden de getallen gegenereerd binnen elke kolom en de 5 vakjes hierin, in de toepasselijke ranges. Daarna wordt deze kaart gedisplayed in een HTML template van een li table. <br>
   <img src="readme-images/top-1.png" width="46%" alt="top 1">
-  <img src="readme-images/top-1.1.png" width="46%" alt="top 1"> 
+  <img src="readme-images/top-1.1.png" width="46%" alt="top 1"> <br>
+  
   - Opslaan van previous numbers en deze displayen in een lijst. Ik heb heel veel met arrays en for loops gewerkt voor deze opdracht, waar ik voorheen niet veel mee heb gewerkt. Het was ook een grote uitdaging om deze uit te vogelen. Met goede bronnen en een beetje hulp heb ik de logica hiervoor op kunnen zetten. <br>
-  <img src="readme-images/top-2.png" width="46%" alt="top 2"> 
+  <img src="readme-images/top-2.png" width="46%" alt="top 2"> <br>
+  
   - Een HTML template gebruiken voor het toevoegen van de bingokaarten. Ik heb verder nooit met templates gewerkt, maar dit is enorm ideaal in deze situatie: je kan oneindig veel van de templates toevoegen aan de HTML, zonder dat de HTML zelf al honderden regels lang is. <br>
-  <img src="readme-images/top-3.png" width="46%" alt="top 3"> 
+  <img src="readme-images/top-3.png" width="46%" alt="top 3"> <br>
+  
   - Het is gelukt om de Web Speech API toe te voegen aan dit project! De integratie van de documentatie in mijn script was erg simpel en for the most part ook goed te volgen. Ik ben erg blij dat het is gelukt om BINGO! te roepen. <br>
   <img src="readme-images/top-4.png" width="46%" alt="top 4"> 
  
   ### Dit was lastig/Is niet gelukt:
   Korte omschrijving met plaatje(s)
+  
   - Ik heb de table's (bingokaarten) geprobeert ook accessible te maken voor keyboard users, maar dit werkt nog best wel lastig, aangezien ik zelf een tab-index toe moest voegen aan de html elements en een keydown eventlistener voor de interactie zelf. De arrowkeys werken hier bijvoorbeeld niet op, dus je kan niet terug in de kaart. Ook is er geen snelle manier om te kiezen welke kaart je wil bestempelen, als je meerdere kaarten hebt toegevoegd. Ik zou dit dus zeker toegankelijker maken als ik hier meer kennis over had, is dus niet gelukt. <br>
-  <img src="readme-images/minder-1.png" width="46%" alt="niet zo best 1"> 
-  <img src="readme-images/minder-1.1.png" width="46%" alt="niet zo best 1"> 
+  <img src="readme-images/minder-1.png" width="25%" alt="niet zo best 1"> 
+  <img src="readme-images/minder-1.1.png" width="70%" alt="niet zo best 1"> <br>
+  
   - Het was enorm lastig om uit te vogelen hoe ik de bingokaarten moest genereren, omdat er zo veel getallen gegenereerd moeten worden. Met de conditional statement in deze functie was ik vooral aan het worstelen geweest, omdat ik hier eerst de generateNumberBetween() functie al in had gezet, en daardoor kon hij niet makkelijk checken voor dupes. Uiteindelijk heb ik het op deze manier herschreven, met hulp van mijn vriend. Hij suggereerde om juist in de conditional statement de min en max te definiëren van de functie. <br>
-  <img src="readme-images/minder-2.png" width="46%" alt="niet zo best 2">
+  <img src="readme-images/minder-2.png" width="46%" alt="niet zo best 2"> <br>
   
   - Als ik de kans zou hebben, denk ik dat ik ook meer had gedaan aan de responsiveness (Hij werkt nu goed, maar misschien zou ik hier wat meer op in kunnen gaan). Ook hadden meer animaties deze bingo experience waarschijnlijk leuker gemaakt! <br>
   <img src="readme-images/minder-3.png" width="46%" alt="niet zo best 3">
